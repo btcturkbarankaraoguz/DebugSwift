@@ -11,6 +11,7 @@ import Foundation
 import SwiftUI
 
 /// A snapshot of the UI element tree in its current state.
+@available(iOS 14, *)
 final class Snapshot: NSObject {
     /// Unique identifier for the snapshot.
     let identifier = UUID().uuidString

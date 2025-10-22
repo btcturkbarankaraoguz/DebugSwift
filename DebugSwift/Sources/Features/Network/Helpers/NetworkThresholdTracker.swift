@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 /// Tracks network requests and manages threshold limits
+@available(iOS 14, *)
 public final class NetworkThresholdTracker: @unchecked Sendable {
     static let shared = NetworkThresholdTracker()
     
@@ -26,6 +27,7 @@ public final class NetworkThresholdTracker: @unchecked Sendable {
     }
     
     /// Request threshold configuration
+    @available(iOS 14, *)
     struct ThresholdConfig: Codable {
         var limit: Int = 1000
         var timeWindow: TimeInterval = 60.0 // Default: 1 minute
@@ -36,6 +38,7 @@ public final class NetworkThresholdTracker: @unchecked Sendable {
     }
     
     /// Request tracking entry
+    @available(iOS 14, *)
     struct RequestEntry {
         let url: URL
         let timestamp: Date
@@ -43,6 +46,7 @@ public final class NetworkThresholdTracker: @unchecked Sendable {
     }
     
     /// Threshold breach record
+    @available(iOS 14, *)
     public struct ThresholdBreach: Sendable {
         public let timestamp: Date
         public let requestCount: Int
@@ -358,6 +362,7 @@ public final class NetworkThresholdTracker: @unchecked Sendable {
 
 // MARK: - Notification Names
 
+@available(iOS 14, *)
 extension Notification.Name {
     static let networkThresholdExceeded = Notification.Name("networkThresholdExceeded_DebugSwift")
     static let networkThresholdUpdated = Notification.Name("networkThresholdUpdated_DebugSwift")

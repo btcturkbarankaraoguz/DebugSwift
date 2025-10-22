@@ -39,6 +39,7 @@ private var isStdoutCapturing: Bool {
 }
 
 /// Global thread-safe buffered logging
+@available(iOS 14, *)
 private func logStdoutMessageGlobal(_ string: String) {
     guard isStdoutCapturing else { return }
 
@@ -64,6 +65,7 @@ private func logStdoutMessageGlobal(_ string: String) {
 }
 
 /// Global processing for complete log lines
+@available(iOS 14, *)
 private func processCompleteLogLineGlobal(_ line: String) {
     // File logging
     if let logUrl = StdoutCapture.shared.logUrl {
@@ -79,6 +81,7 @@ private func processCompleteLogLineGlobal(_ line: String) {
 }
 
 /// Global thread-safe console output with filtering
+@available(iOS 14, *)
 private func appendConsoleOutputSafelyGlobal(_ output: String) {
     guard !shouldIgnoreLogGlobal(output), shouldIncludeLogGlobal(output) else { return }
 
@@ -86,10 +89,12 @@ private func appendConsoleOutputSafelyGlobal(_ output: String) {
     ConsoleOutput.shared.addPrintAndNSLogOutput(output)
 }
 
+@available(iOS 14, *)
 private func shouldIgnoreLogGlobal(_ log: String) -> Bool {
     DebugSwift.Console.shared.ignoredLogs.contains { log.contains($0) }
 }
 
+@available(iOS 14, *)
 private func shouldIncludeLogGlobal(_ log: String) -> Bool {
     if DebugSwift.Console.shared.onlyLogs.isEmpty {
         return true
@@ -100,6 +105,7 @@ private func shouldIncludeLogGlobal(_ log: String) -> Bool {
 // MARK: - C-Convention Handlers
 
 /// Replacement for stdout _write function
+@available(iOS 14, *)
 @_cdecl("capturedStdoutWriter")
 private func capturedStdoutWriter(
     fd: UnsafeMutableRawPointer?,
@@ -141,6 +147,7 @@ private func standardStdoutWriter(
 
 // MARK: - StdoutCapture Class
 
+@available(iOS 14, *)
 class StdoutCapture: @unchecked Sendable {
     static let shared = StdoutCapture()
 
@@ -217,6 +224,7 @@ class StdoutCapture: @unchecked Sendable {
 
 // MARK: - File Utilities
 
+@available(iOS 14, *)
 extension String {
     fileprivate func appendLineToURL(_ fileURL: URL) throws {
         try (self + "\n").appendToURL(fileURL)
@@ -229,6 +237,7 @@ extension String {
     }
 }
 
+@available(iOS 14, *)
 extension Data {
     fileprivate func appendToURL(_ fileURL: URL) throws {
         if let handle = try? FileHandle(forWritingTo: fileURL) {

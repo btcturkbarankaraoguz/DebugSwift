@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 @MainActor
 protocol SliderTableViewCellDelegate: AnyObject {
     func sliderCell(_ sliderCell: SliderTableViewCell, didSelectValue value: CGFloat)
@@ -15,6 +16,7 @@ protocol SliderTableViewCellDelegate: AnyObject {
     func sliderCellDidEndEditingValue(_ sliderCell: SliderTableViewCell)
 }
 
+@available(iOS 14, *)
 final class SliderTableViewCell: UITableViewCell {
     let titleLabel: UILabel = {
         let label = UILabel()
@@ -116,6 +118,7 @@ final class SliderTableViewCell: UITableViewCell {
     }
 }
 
+@available(iOS 14, *)
 extension SliderTableViewCell {
     enum SliderType: Int {
         case float

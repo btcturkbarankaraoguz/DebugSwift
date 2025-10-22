@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 @MainActor
 protocol ColorPickerTableViewCellDelegate: AnyObject {
     func colorPickerCell(
@@ -15,6 +16,7 @@ protocol ColorPickerTableViewCellDelegate: AnyObject {
     )
 }
 
+@available(iOS 14, *)
 final class ColorPickerTableViewCell: UITableViewCell {
     let titleLabel: UILabel = {
         let label = UILabel()

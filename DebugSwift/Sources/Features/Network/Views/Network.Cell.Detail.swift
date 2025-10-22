@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 final class NetworkTableViewCellDetail: UITableViewCell {
     let details: UITextView = {
         let textView = UITextView()

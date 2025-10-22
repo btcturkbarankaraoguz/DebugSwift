@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 final class ResourcesGenericController: BaseTableController {
     let viewModel: ResourcesGenericListViewModel
     var hideNavigationAddButton = false
@@ -568,6 +569,7 @@ final class ResourcesGenericController: BaseTableController {
 }
 
 // MARK: - ResourcesGenericEditDelegate
+@available(iOS 14, *)
 extension ResourcesGenericController: ResourcesGenericEditDelegate {
     func didSaveItem(key: String, value: String, originalKey: String?) {
         if let index = editingIndex {
@@ -582,6 +584,7 @@ extension ResourcesGenericController: ResourcesGenericEditDelegate {
     }
 }
 
+@available(iOS 14, *)
 extension ResourcesGenericController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let searchText = searchController.searchBar.text ?? ""
@@ -591,6 +594,7 @@ extension ResourcesGenericController: UISearchResultsUpdating {
     }
 }
 
+@available(iOS 14, *)
 protocol ResourcesGenericListViewModel: AnyObject {
     typealias ViewData = ResourcesGenericController.CellViewData
 
@@ -658,6 +662,7 @@ protocol ResourcesGenericListViewModel: AnyObject {
 
 // Optional
 
+@available(iOS 14, *)
 extension ResourcesGenericListViewModel {
     var isDeleteEnable: Bool { true }
     var isShareEnable: Bool { true }
@@ -688,7 +693,9 @@ extension ResourcesGenericListViewModel {
     func keyExists(_ key: String) -> Bool { false }
 }
 
+@available(iOS 14, *)
 extension ResourcesGenericController {
+    @available(iOS 14, *)
     struct CellViewData {
         let title: String
         let value: String
@@ -705,6 +712,7 @@ extension ResourcesGenericController {
         }
     }
     
+    @available(iOS 14, *)
     struct EditItemData {
         let key: String?
         let value: String?

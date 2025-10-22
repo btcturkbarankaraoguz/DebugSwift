@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 final class GridOverlayColorScheme: Equatable {
     static func == (lhs: GridOverlayColorScheme, rhs: GridOverlayColorScheme) -> Bool {
         lhs.primaryColor == rhs.primaryColor && rhs.secondaryColor == lhs.secondaryColor
@@ -25,6 +26,7 @@ final class GridOverlayColorScheme: Equatable {
         self.secondaryColor = secondaryColor
     }
 
+    @available(iOS 14, *)
     final class func colorScheme(
         withPrimaryColor primaryColor: UIColor,
         secondaryColor: UIColor

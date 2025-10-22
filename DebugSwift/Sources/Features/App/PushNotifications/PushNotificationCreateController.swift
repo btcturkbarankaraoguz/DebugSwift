@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 @MainActor
 class PushNotificationCreateController: BaseController {
     
@@ -18,6 +19,7 @@ class PushNotificationCreateController: BaseController {
         return tableView
     }()
     
+    @available(iOS 14, *)
     private struct NotificationForm {
         var title: String = ""
         var body: String = ""
@@ -116,6 +118,7 @@ class PushNotificationCreateController: BaseController {
 
 // MARK: - UITableViewDataSource
 
+@available(iOS 14, *)
 extension PushNotificationCreateController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -216,6 +219,7 @@ extension PushNotificationCreateController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
+@available(iOS 14, *)
 extension PushNotificationCreateController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

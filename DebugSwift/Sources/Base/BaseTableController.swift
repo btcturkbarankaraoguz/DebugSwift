@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 class BaseTableController: UITableViewController {
     init() {
         super.init(style: .grouped)

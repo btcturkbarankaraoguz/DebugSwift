@@ -9,6 +9,7 @@ import CoreLocation
 import Foundation
 import UIKit
 
+@available(iOS 14, *)
 final class LocationViewController: BaseController {
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -72,6 +73,7 @@ final class LocationViewController: BaseController {
     }
 }
 
+@available(iOS 14, *)
 extension LocationViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         viewModel.numberOfRows
@@ -130,6 +132,7 @@ extension LocationViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
+@available(iOS 14, *)
 extension LocationViewController: LocationSelectionDelegate {
     func didSelectLocation(_ location: CLLocation) {
         LocationToolkit.shared.simulatedLocation = location

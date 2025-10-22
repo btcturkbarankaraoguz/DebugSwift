@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 @MainActor
 class PushNotificationTemplatesController: BaseController {
     
@@ -69,6 +70,7 @@ class PushNotificationTemplatesController: BaseController {
 
 // MARK: - UITableViewDataSource
 
+@available(iOS 14, *)
 extension PushNotificationTemplatesController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -96,6 +98,7 @@ extension PushNotificationTemplatesController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
+@available(iOS 14, *)
 extension PushNotificationTemplatesController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

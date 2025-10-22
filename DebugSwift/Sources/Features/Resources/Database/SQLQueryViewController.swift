@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 @MainActor
 final class SQLQueryViewController: BaseController {
     
@@ -88,6 +89,7 @@ final class SQLQueryViewController: BaseController {
 
 // MARK: - Setup
 
+@available(iOS 14, *)
 private extension SQLQueryViewController {
     func setup() {
         setupViews()
@@ -239,6 +241,7 @@ private extension SQLQueryViewController {
 
 // MARK: - UITableViewDataSource
 
+@available(iOS 14, *)
 extension SQLQueryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return resultRows.count + 1 // +1 for header
@@ -285,6 +288,7 @@ extension SQLQueryViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
+@available(iOS 14, *)
 extension SQLQueryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -293,6 +297,7 @@ extension SQLQueryViewController: UITableViewDelegate {
 
 // MARK: - Query History View Controller
 
+@available(iOS 14, *)
 @MainActor
 final class QueryHistoryViewController: UITableViewController {
     private let history: [String]

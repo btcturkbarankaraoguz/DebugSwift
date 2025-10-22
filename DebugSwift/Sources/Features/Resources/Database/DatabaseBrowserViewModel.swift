@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+@available(iOS 14, *)
 @MainActor
 final class DatabaseBrowserViewModel {
     
@@ -45,6 +46,7 @@ final class DatabaseBrowserViewModel {
 
 // MARK: - Database File Manager
 
+@available(iOS 14, *)
 final class DatabaseFileManager: @unchecked Sendable {
     static let shared = DatabaseFileManager()
     
@@ -110,6 +112,7 @@ final class DatabaseFileManager: @unchecked Sendable {
 
 // MARK: - Models
 
+@available(iOS 14, *)
 struct DatabaseFile {
     let name: String
     let path: String

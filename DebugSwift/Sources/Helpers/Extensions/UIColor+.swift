@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 extension UIColor {
     convenience init?(hexString: String) {
         var hexSanitized = hexString.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -73,6 +74,7 @@ extension UIColor {
     }
 }
 
+@available(iOS 14, *)
 extension UIColor {
     convenience init(light: UIColor, dark: UIColor) {
         self.init {

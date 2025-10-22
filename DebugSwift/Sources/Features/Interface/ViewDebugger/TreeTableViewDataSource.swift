@@ -8,10 +8,12 @@
 
 import UIKit
 
+@available(iOS 14, *)
 protocol Tree {
     var children: [Self] { get }
 }
 
+@available(iOS 14, *)
 final class TreeTableViewDataSource<TreeType: Tree>: NSObject, UITableViewDataSource {
     typealias CellFactory = (UITableView /* tableView */, TreeType /* value */, Int /* depth */, IndexPath /* indexPath */, Bool /* isCollapsed */ ) -> UITableViewCell
 
@@ -45,6 +47,7 @@ final class TreeTableViewDataSource<TreeType: Tree>: NSObject, UITableViewDataSo
     }
 }
 
+@available(iOS 14, *)
 extension TreeTableViewDataSource where TreeType: AnyObject {
     func indexPath(forValue value: TreeType) -> IndexPath? {
         flattenedTree
@@ -53,6 +56,7 @@ extension TreeTableViewDataSource where TreeType: AnyObject {
     }
 }
 
+@available(iOS 14, *)
 private struct FlattenedTree<TreeType: Tree> {
     let value: TreeType
     let depth: Int
@@ -64,6 +68,7 @@ private struct FlattenedTree<TreeType: Tree> {
     }
 }
 
+@available(iOS 14, *)
 private func flatten<TreeType: Tree>(tree: TreeType, depth: Int = 0, maxDepth: Int?) -> [FlattenedTree<TreeType>] {
     let initial = [FlattenedTree<TreeType>(value: tree, depth: depth)]
     let childDepth = depth + 1

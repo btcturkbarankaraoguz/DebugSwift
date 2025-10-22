@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+@available(iOS 14, *)
 final class CrashDetailViewModel: NSObject {
     private(set) var data: CrashModel
 

@@ -8,6 +8,7 @@
 
 import Foundation
 
+@available(iOS 14, *)
 class LaunchTimeTracker: @unchecked Sendable {
     
     private init() {}

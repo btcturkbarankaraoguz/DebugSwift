@@ -19,6 +19,7 @@ import UIKit
 /// present the action sheet from.
 ///   - onFocus: A closure that will be called when the user selects the
 /// 'Focus' option from the action sheet.
+@available(iOS 14, *)
 @MainActor
 func actionSheet(
     for snapshot: Snapshot,

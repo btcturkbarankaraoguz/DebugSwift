@@ -13,6 +13,7 @@ enum RequestSerializer: UInt {
     case form
 }
 
+@available(iOS 14, *)
 final class HttpModel: NSObject {
     var url: URL?
     var requestData: Data?

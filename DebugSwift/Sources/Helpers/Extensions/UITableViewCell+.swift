@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 extension UITableViewCell {
     func setup(
         title: String,

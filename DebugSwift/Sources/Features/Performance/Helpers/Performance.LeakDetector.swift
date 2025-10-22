@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 public struct PerformanceLeak {
     public let controller: UIViewController?
     public let view: UIView?
@@ -26,6 +27,7 @@ public struct PerformanceLeak {
     public var isDeallocation: Bool { controller == nil && view == nil }
 }
 
+@available(iOS 14, *)
 class PerformanceLeakDetector: @unchecked Sendable {
     
     private init() {}
@@ -97,6 +99,7 @@ class PerformanceLeakDetector: @unchecked Sendable {
     }
 }
 
+@available(iOS 14, *)
 extension UIView {
     /**
      Same as removeFromSuperview() but it also checks if it or any of its subviews don't deinit after the view is removed from the view tree. In that case the PerformanceLeakDetector warning callback will be triggered.
@@ -118,6 +121,7 @@ extension UIView {
     }
 }
 
+@available(iOS 14, *)
 extension UIView {
     @objc fileprivate func checkForLeakedSubViews() {
         let delay = PerformanceLeakDetector.shared.delay
@@ -465,6 +469,7 @@ extension UIView {
     }
 }
 
+@available(iOS 14, *)
 extension UIViewController {
     enum Constants {
         fileprivate static let lvcdCheckForMemoryLeakNotification = Notification.Name("lvcdCheckForMemoryLeak")
@@ -827,6 +832,7 @@ extension UIViewController {
     // Call this method if the ViewController deinitializes.
     // If a memory leak was detected earlier, this indicates that the leak has resolved itself.
     // Notify that the memory issue has been resolved
+    @available(iOS 14, *)
     fileprivate class func lvcdMemoryLeakResolved(
         memoryLeakDetectionDate: TimeInterval,
         errorMessage: String,
@@ -855,6 +861,7 @@ extension UIViewController {
         Debug.print("\(errorTitle) \(errorMessage)")
     }
 
+    @available(iOS 14, *)
     fileprivate class LVCDSplitViewAssociatedObject: @unchecked Sendable {
         var key = malloc(1)!
         
@@ -875,6 +882,7 @@ extension UIViewController {
     }
 }
 
+@available(iOS 14, *)
 extension UIViewController {
     @objc func checkIfBelongsToSplitViewController(_ notification: Notification) {
         Task { @MainActor [weak self] in
@@ -919,10 +927,12 @@ extension UIViewController {
     }
 }
 
+@available(iOS 14, *)
 extension NotificationCenter {
     fileprivate static let lvcd = NotificationCenter()
 }
 
+@available(iOS 14, *)
 private class LVCDDeallocator: @unchecked Sendable {
     nonisolated(unsafe) static var key = malloc(1)!
 
@@ -992,12 +1002,14 @@ private class LVCDDeallocator: @unchecked Sendable {
     }
 }
 
+@available(iOS 14, *)
 extension UIResponder {
     fileprivate var viewController: UIViewController? {
         next as? UIViewController ?? next?.viewController
     }
 }
 
+@available(iOS 14, *)
 extension UIApplication {
     /// get a window, preferably once that is in foreground (active) in case you have multiple windows on iPad
     private var lvcdActiveMainKeyWindow: UIWindow? {
@@ -1009,6 +1021,7 @@ extension UIApplication {
         }.first(where: \.isKeyWindow)
     }
 
+    @available(iOS 14, *)
     private final class func lvcdTopViewController(
         controller: UIViewController? = UIApplication.shared.lvcdActiveMainKeyWindow?.rootViewController
     ) -> UIViewController? {
@@ -1017,6 +1030,7 @@ extension UIApplication {
         ) : controller
     }
 
+    @available(iOS 14, *)
     private final class func lvcdFindViewControllerWithTag(
         controller: UIViewController? = UIApplication.shared.lvcdActiveMainKeyWindow?.rootViewController,
         tag: Int
@@ -1029,7 +1043,6 @@ extension UIApplication {
         )
     }
 
-    @available(iOS 13.0, tvOS 13, *)
     private var lvcdFirstActiveWindowScene: UIWindowScene? {
         let activeScenes = UIApplication.shared.connectedScenes.filter {
             $0.activationState == UIScene.ActivationState.foregroundActive && $0 is UIWindowScene
@@ -1040,6 +1053,7 @@ extension UIApplication {
     }
 }
 
+@available(iOS 14, *)
 extension String {
     private mutating func lvcdRegReplace(
         pattern: String,
@@ -1095,7 +1109,9 @@ extension String {
     }
 }
 
+@available(iOS 14, *)
 extension PerformanceLeakDetector {
+    @available(iOS 14, *)
     struct LeakModel {
         let details: String
         let screenshot: UIImage?

@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 final class StepperTableViewCell: UITableViewCell {
     
     // MARK: - Properties

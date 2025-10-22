@@ -7,6 +7,7 @@
 
 import Foundation
 
+@available(iOS 14, *)
 final class AppCustomActionViewModel: NSObject, ResourcesGenericListViewModel {
     private var data: CustomAction
     private var filtered = CustomAction.Actions()

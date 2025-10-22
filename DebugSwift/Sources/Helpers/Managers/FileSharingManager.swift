@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 enum FileSharingManager {
     static func generateFileAndShare(text: String, fileName: String) {
         let tempURL = URL(

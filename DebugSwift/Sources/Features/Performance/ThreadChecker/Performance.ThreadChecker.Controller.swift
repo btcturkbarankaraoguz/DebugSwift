@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 final class PerformanceThreadCheckerViewController: BaseTableController {
     
     // MARK: - UI Components
@@ -266,6 +267,7 @@ final class PerformanceThreadCheckerViewController: BaseTableController {
 
 // MARK: - Table View Data Source
 
+@available(iOS 14, *)
 extension PerformanceThreadCheckerViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -294,6 +296,7 @@ extension PerformanceThreadCheckerViewController {
 
 // MARK: - Thread Violation Cell
 
+@available(iOS 14, *)
 class ThreadViolationCell: UITableViewCell {
     
     private lazy var severityLabel: UILabel = {

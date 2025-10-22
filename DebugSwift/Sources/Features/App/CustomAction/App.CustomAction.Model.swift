@@ -7,6 +7,7 @@
 
 import Foundation
 
+@available(iOS 14, *)
 public struct CustomAction {
     public init(title: String, actions: Actions) {
         self.title = title
@@ -17,9 +18,11 @@ public struct CustomAction {
     let actions: Actions
 }
 
+@available(iOS 14, *)
 extension CustomAction {
     public typealias Actions = [Action]
 
+    @available(iOS 14, *)
     public struct Action {
         public init(title: String, action: (() -> Void)?) {
             self.title = title

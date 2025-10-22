@@ -8,6 +8,7 @@
 
 import Foundation
 
+@available(iOS 14, *)
 final class HttpDatasource: @unchecked Sendable {
     static let shared = HttpDatasource()
 
@@ -82,6 +83,7 @@ final class HttpDatasource: @unchecked Sendable {
     }
 }
 
+@available(iOS 14, *)
 extension URLRequest {
     private enum AssociatedKeys {
         static let requestId = "requestId"

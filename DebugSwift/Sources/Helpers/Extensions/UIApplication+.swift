@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 extension UIApplication {
     static var keyWindow: UIWindow? {
       let allScenes = UIApplication.shared.connectedScenes
@@ -19,6 +20,7 @@ extension UIApplication {
         return nil
     }
     
+    @available(iOS 14, *)
     class func topViewController(
         _ base: UIViewController? = UIApplication.keyWindow?.rootViewController
     ) -> UIViewController? {
@@ -35,6 +37,7 @@ extension UIApplication {
     }
 }
 
+@available(iOS 14, *)
 extension UIWindowScene {
     static var _windows: [UIWindow] {
         UIApplication.shared.connectedScenes

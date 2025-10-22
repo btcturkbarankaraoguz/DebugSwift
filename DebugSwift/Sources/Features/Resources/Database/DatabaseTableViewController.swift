@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 @MainActor
 final class DatabaseTableViewController: BaseController {
     
@@ -119,6 +120,7 @@ final class DatabaseTableViewController: BaseController {
 
 // MARK: - Setup
 
+@available(iOS 14, *)
 private extension DatabaseTableViewController {
     func setup() {
         setupViews()
@@ -223,6 +225,7 @@ private extension DatabaseTableViewController {
 
 // MARK: - UITableViewDataSource
 
+@available(iOS 14, *)
 extension DatabaseTableViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -253,6 +256,7 @@ extension DatabaseTableViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
+@available(iOS 14, *)
 extension DatabaseTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -280,6 +284,7 @@ extension DatabaseTableViewController: UITableViewDelegate {
 
 // MARK: - UISearchResultsUpdating
 
+@available(iOS 14, *)
 extension DatabaseTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         // TODO: Implement search functionality
@@ -288,6 +293,7 @@ extension DatabaseTableViewController: UISearchResultsUpdating {
 
 // MARK: - DatabaseTableHeaderViewDelegate
 
+@available(iOS 14, *)
 extension DatabaseTableViewController: DatabaseTableHeaderViewDelegate {
     func headerView(_ headerView: DatabaseTableHeaderView, didTapColumn column: String) {
         if sortColumn == column {
@@ -304,6 +310,7 @@ extension DatabaseTableViewController: DatabaseTableHeaderViewDelegate {
 
 // MARK: - DatabaseRowEditDelegate
 
+@available(iOS 14, *)
 extension DatabaseTableViewController: DatabaseRowEditDelegate {
     func didSaveRow() {
         loadTableData()
@@ -312,6 +319,7 @@ extension DatabaseTableViewController: DatabaseRowEditDelegate {
 
 // MARK: - Helper Methods
 
+@available(iOS 14, *)
 private extension DatabaseTableViewController {
     func showRowActionSheet(for indexPath: IndexPath) {
         let actionSheet = UIAlertController(
@@ -448,6 +456,7 @@ private extension DatabaseTableViewController {
 
 // MARK: - Database Data Cell
 
+@available(iOS 14, *)
 final class DatabaseDataCell: UITableViewCell {
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -535,11 +544,13 @@ final class DatabaseDataCell: UITableViewCell {
 
 // MARK: - Database Table Header View
 
+@available(iOS 14, *)
 @MainActor
 protocol DatabaseTableHeaderViewDelegate: AnyObject {
     func headerView(_ headerView: DatabaseTableHeaderView, didTapColumn column: String)
 }
 
+@available(iOS 14, *)
 final class DatabaseTableHeaderView: UIView {
     weak var delegate: DatabaseTableHeaderViewDelegate?
     private var columns: [String] = []
@@ -620,6 +631,7 @@ final class DatabaseTableHeaderView: UIView {
 
 // MARK: - Protocols
 
+@available(iOS 14, *)
 @MainActor
 protocol DatabaseRowEditDelegate: AnyObject {
     func didSaveRow()

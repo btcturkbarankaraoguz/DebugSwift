@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 extension UIImage {
     static func named(_ imageName: String, default: String? = nil) -> UIImage? {
         return UIImage(systemName: imageName)

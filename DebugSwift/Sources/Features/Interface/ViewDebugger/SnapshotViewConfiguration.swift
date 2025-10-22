@@ -9,8 +9,10 @@
 import UIKit
 
 /// Configuration options for the 3D snapshot view.
+@available(iOS 14, *)
 final class SnapshotViewConfiguration: NSObject {
     /// Attributes used to customize the header rendered above the UI element.
+    @available(iOS 14, *)
     final class HeaderAttributes: NSObject {
         /// The background color of the header rendered above each view
         /// that has name text.

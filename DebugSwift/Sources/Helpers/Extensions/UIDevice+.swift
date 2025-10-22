@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 extension UIDevice {
     var modelName: String {
         var systemInfo = utsname()

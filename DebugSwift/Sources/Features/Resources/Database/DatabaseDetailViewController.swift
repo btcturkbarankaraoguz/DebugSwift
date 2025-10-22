@@ -8,6 +8,7 @@
 import UIKit
 import SQLite3
 
+@available(iOS 14, *)
 @MainActor
 final class DatabaseDetailViewController: BaseController {
     
@@ -66,6 +67,7 @@ final class DatabaseDetailViewController: BaseController {
 
 // MARK: - Setup
 
+@available(iOS 14, *)
 private extension DatabaseDetailViewController {
     func setup() {
         setupViews()
@@ -117,6 +119,7 @@ private extension DatabaseDetailViewController {
 
 // MARK: - UITableViewDataSource
 
+@available(iOS 14, *)
 extension DatabaseDetailViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -147,6 +150,7 @@ extension DatabaseDetailViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
+@available(iOS 14, *)
 extension DatabaseDetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -162,12 +166,14 @@ extension DatabaseDetailViewController: UITableViewDelegate {
 
 // MARK: - Database Table Model
 
+@available(iOS 14, *)
 struct DatabaseTable {
     let name: String
     let rowCount: Int
     let columns: [DatabaseColumn]
 }
 
+@available(iOS 14, *)
 struct DatabaseColumn {
     let name: String
     let type: String

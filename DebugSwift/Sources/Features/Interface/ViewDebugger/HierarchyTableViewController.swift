@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 @MainActor
 protocol HierarchyTableViewControllerDelegate: AnyObject {
     func hierarchyTableViewController(_ viewController: HierarchyTableViewController, didSelectSnapshot snapshot: Snapshot)
@@ -16,6 +17,7 @@ protocol HierarchyTableViewControllerDelegate: AnyObject {
     func hierarchyTableViewControllerWillNavigateBackToPreviousSnapshot(_ viewController: HierarchyTableViewController)
 }
 
+@available(iOS 14, *)
 final class HierarchyTableViewController: UITableViewController, HierarchyTableViewCellDelegate, HierarchyTableViewControllerDelegate {
     private lazy var horizontalScrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -243,4 +245,5 @@ final class HierarchyTableViewController: UITableViewController, HierarchyTableV
     }
 }
 
+@available(iOS 14, *)
 extension Snapshot: Tree {}

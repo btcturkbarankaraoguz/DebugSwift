@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 final class ThreadViolationDetailViewController: BaseController {
     
     // MARK: - Properties
@@ -405,6 +406,7 @@ final class ThreadViolationDetailViewController: BaseController {
 
 // MARK: - Settings View Controller
 
+@available(iOS 14, *)
 final class ThreadCheckerSettingsViewController: BaseTableController {
     
     private enum SettingsSection: Int, CaseIterable {
@@ -573,6 +575,7 @@ final class ThreadCheckerSettingsViewController: BaseTableController {
 
 // MARK: - Switch Cell
 
+@available(iOS 14, *)
 class SwitchCell: UITableViewCell {
     
     private let titleLabel = UILabel()

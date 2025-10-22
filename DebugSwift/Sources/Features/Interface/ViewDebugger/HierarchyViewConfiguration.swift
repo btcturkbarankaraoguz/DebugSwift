@@ -9,6 +9,7 @@
 import UIKit
 
 /// Configuration options for the hierarchy (tree) view.
+@available(iOS 14, *)
 final class HierarchyViewConfiguration: NSObject {
     /// The maximum depth that is rendered in the tree view. If the
     /// depth of the item exceeds this value, it will be hidden from

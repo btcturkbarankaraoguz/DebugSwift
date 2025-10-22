@@ -8,6 +8,7 @@
 
 import Foundation
 
+@available(iOS 14, *)
 protocol FileManaging {
     func contentsOfDirectory(atPath path: String) throws -> [String]
     func fileExists(atPath path: String, isDirectory: inout ObjCBool) -> Bool
@@ -15,6 +16,7 @@ protocol FileManaging {
     func attributesOfItem(atPath path: String) throws -> [FileAttributeKey: Any]
 }
 
+@available(iOS 14, *)
 class FileManagerHelper: FileManaging {
     func contentsOfDirectory(atPath path: String) throws -> [String] {
         try FileManager.default.contentsOfDirectory(atPath: path)

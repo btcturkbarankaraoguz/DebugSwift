@@ -7,6 +7,7 @@
 
 import Foundation
 
+@available(iOS 14, *)
 final class AppCustomInfoViewModel: NSObject, ResourcesGenericListViewModel {
     private var data: CustomData
     private var filteredInfo = [CustomData.Info]()

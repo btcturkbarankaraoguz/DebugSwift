@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 class TopLevelViewWrapper: UIView {
     func toggle(with newValue: Bool) {
         if newValue {

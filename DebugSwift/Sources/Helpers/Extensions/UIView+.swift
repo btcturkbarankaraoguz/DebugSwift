@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+@available(iOS 14, *)
 extension UIView {
     
     // Associated object keys

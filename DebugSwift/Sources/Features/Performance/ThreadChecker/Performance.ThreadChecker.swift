@@ -8,11 +8,13 @@
 import UIKit
 import Foundation
 
+@available(iOS 14, *)
 public final class PerformanceThreadChecker: @unchecked Sendable {
     public static let shared = PerformanceThreadChecker()
     
     // MARK: - Types
     
+    @available(iOS 14, *)
     public struct ThreadViolation: Sendable {
         public let id: UUID
         public let timestamp: Date

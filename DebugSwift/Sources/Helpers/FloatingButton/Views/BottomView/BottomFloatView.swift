@@ -15,6 +15,7 @@ enum BottomFloatViewType {
     case red
 }
 
+@available(iOS 14, *)
 class BottomFloatView: UIView {
     var type: BottomFloatViewType = .black {
         didSet {

@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 @MainActor
 class PushNotificationSettingsController: BaseController {
     
@@ -75,6 +76,7 @@ class PushNotificationSettingsController: BaseController {
 
 // MARK: - UITableViewDataSource
 
+@available(iOS 14, *)
 extension PushNotificationSettingsController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -203,6 +205,7 @@ extension PushNotificationSettingsController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
+@available(iOS 14, *)
 extension PushNotificationSettingsController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -277,6 +280,7 @@ extension PushNotificationSettingsController: UITableViewDelegate {
 
 // MARK: - MenuSwitchTableViewCellDelegate
 
+@available(iOS 14, *)
 extension PushNotificationSettingsController: MenuSwitchTableViewCellDelegate {
     func menuSwitchTableViewCell(_ cell: MenuSwitchTableViewCell, didSetOn isOn: Bool) {
         switch cell.tag {

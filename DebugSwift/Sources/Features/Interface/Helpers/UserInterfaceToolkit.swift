@@ -9,6 +9,7 @@
 import SwiftUI
 import Combine
 
+@available(iOS 14, *)
 @MainActor
 class UserInterfaceToolkit: @unchecked Sendable {
     // MARK: - Properties
@@ -188,6 +189,7 @@ class UserInterfaceToolkit: @unchecked Sendable {
 
 // MARK: - Extensions
 
+@available(iOS 14, *)
 extension UserInterfaceToolkit {
     static let notification = Notification.Name(
         "UserInterfaceToolkitColorizedViewBordersChangedNotification")
@@ -195,10 +197,12 @@ extension UserInterfaceToolkit {
 
 // MARK: - Environment Key
 
+@available(iOS 14, *)
 private struct UserInterfaceToolkitEnvironmentKey: EnvironmentKey {
     static let defaultValue: UserInterfaceToolkit? = nil
 }
 
+@available(iOS 14, *)
 extension EnvironmentValues {
     var userInterfaceToolkit: UserInterfaceToolkit? {
         get { self[UserInterfaceToolkitEnvironmentKey.self] }
@@ -208,6 +212,7 @@ extension EnvironmentValues {
 
 // MARK: - View Extension for convenience
 
+@available(iOS 14, *)
 extension View {
     func userInterfaceToolkit(_ toolkit: UserInterfaceToolkit) -> some View {
         self.environment(\.userInterfaceToolkit, toolkit)

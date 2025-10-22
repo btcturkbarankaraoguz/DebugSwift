@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 final class ResourcesTabbedController: BaseController {
     
     private lazy var buttonStackView: UIStackView = {

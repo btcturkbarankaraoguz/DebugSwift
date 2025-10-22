@@ -9,6 +9,7 @@
 import UIKit
 import SwiftUI
 
+@available(iOS 14, *)
 @MainActor
 protocol FloatViewDelegate: NSObjectProtocol {
     func floatViewBeginMove(floatView: FloatBallView, point: CGPoint)
@@ -16,6 +17,7 @@ protocol FloatViewDelegate: NSObjectProtocol {
     func floatViewCancelMove(floatView: FloatBallView)
 }
 
+@available(iOS 14, *)
 class FloatBallView: UIView {
     weak var delegate: FloatViewDelegate?
     var ballDidSelect: (() -> Void)?
@@ -131,6 +133,7 @@ class FloatBallView: UIView {
     }
 }
 
+@available(iOS 14, *)
 extension FloatBallView {
     private func addGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(clickBall))
@@ -211,6 +214,7 @@ extension FloatBallView {
     }
 }
 
+@available(iOS 14, *)
 extension FloatBallView {
     @objc func clickBall() {
         WindowManager.presentDebugger()

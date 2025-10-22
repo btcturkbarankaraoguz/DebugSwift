@@ -8,6 +8,7 @@
 
 import Foundation
 
+@available(iOS 14, *)
 final class ThreadOperator: NSObject {
     private let thread: Thread
     private let modes: [RunLoop.Mode]

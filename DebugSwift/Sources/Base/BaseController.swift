@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 class BaseController: UIViewController {
     init() {
         super.init(nibName: nil, bundle: nil)

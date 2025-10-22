@@ -9,6 +9,7 @@
 @preconcurrency import Foundation
 import UIKit
 
+@available(iOS 14, *)
 @MainActor
 final class PerformanceToolkit {
     let widget: PerformanceWidgetView
@@ -208,6 +209,7 @@ final class PerformanceToolkit {
     }
 }
 
+@available(iOS 14, *)
 @MainActor
 protocol PerformanceToolkitDelegate: AnyObject {
     func performanceToolkitDidUpdateStats(_ toolkit: PerformanceToolkit)

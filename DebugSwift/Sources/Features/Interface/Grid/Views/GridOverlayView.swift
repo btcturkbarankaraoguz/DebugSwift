@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 final class GridOverlayView: TopLevelViewWrapper {
     let GridOverlayViewMinHorizontalMiddlePartSize: NSInteger = 8
     let GridOverlayViewMinVerticalMiddlePartSize: NSInteger = 8

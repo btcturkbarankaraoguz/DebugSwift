@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 @MainActor
 protocol DebugSnapshotViewControllerDelegate: AnyObject {
     func debugSnapshotViewController(_ viewController: DebugSnapshotViewController, didSelectSnapshot snapshot: Snapshot)
@@ -17,6 +18,7 @@ protocol DebugSnapshotViewControllerDelegate: AnyObject {
 }
 
 /// View controller that renders a 3D snapshot view using SceneKit.
+@available(iOS 14, *)
 final class DebugSnapshotViewController: UIViewController, SnapshotViewDelegate, DebugSnapshotViewControllerDelegate {
     private let snapshot: Snapshot
     private let configuration: SnapshotViewConfiguration

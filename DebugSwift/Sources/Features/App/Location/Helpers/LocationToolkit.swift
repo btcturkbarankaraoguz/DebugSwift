@@ -8,6 +8,7 @@
 import CoreLocation
 import Foundation
 
+@available(iOS 14, *)
 class LocationToolkit: @unchecked Sendable {
     static let shared = LocationToolkit()
 
@@ -148,6 +149,7 @@ class LocationToolkit: @unchecked Sendable {
     }()
 }
 
+@available(iOS 14, *)
 final class PresetLocation {
     var title: String
     var latitude: Double
@@ -160,6 +162,7 @@ final class PresetLocation {
     }
 }
 
+@available(iOS 14, *)
 extension LocationToolkit {
     enum Constants {
         static let simulatedLatitude = "_simulatedLocationLatitude"

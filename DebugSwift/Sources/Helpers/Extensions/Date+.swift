@@ -8,6 +8,7 @@
 
 import Foundation
 
+@available(iOS 14, *)
 extension Date {
     static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()

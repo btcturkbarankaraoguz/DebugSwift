@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 final class ThreadViolationBanner: UIView {
     
     // MARK: - UI Components
@@ -183,6 +184,7 @@ final class ThreadViolationBanner: UIView {
 
 // MARK: - Helper Extensions
 
+@available(iOS 14, *)
 private extension UIView {
     func findViewController() -> UIViewController? {
         var responder: UIResponder? = self

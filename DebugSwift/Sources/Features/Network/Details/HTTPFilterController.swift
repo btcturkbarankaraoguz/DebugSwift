@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 final class HTTPFilterController: BaseTableController {
     
     // MARK: - Properties
@@ -426,6 +427,7 @@ final class HTTPFilterController: BaseTableController {
 
 // MARK: - Supporting Cell Classes
 
+@available(iOS 14, *)
 final class SwitchTableViewCell: UITableViewCell {
     private let titleLabel = UILabel()
     private let switchControl = UISwitch()
@@ -476,6 +478,7 @@ final class SwitchTableViewCell: UITableViewCell {
     }
 }
 
+@available(iOS 14, *)
 final class TextFieldTableViewCell: UITableViewCell {
     private let titleLabel = UILabel()
     private let textField = UITextField()

@@ -8,6 +8,7 @@
 import PDFKit
 import UIKit
 
+@available(iOS 14, *)
 enum PDFManager {
     @MainActor
     static func generatePDF(
@@ -144,6 +145,7 @@ enum PDFManager {
     }
 }
 
+@available(iOS 14, *)
 private final class ImageAnnotation: PDFAnnotation {
     private var _image: UIImage?
 
@@ -182,6 +184,7 @@ private final class ImageAnnotation: PDFAnnotation {
     }
 }
 
+@available(iOS 14, *)
 extension PDFAnnotation {
     static func createTextAnnotation(
         text: String,
@@ -202,6 +205,7 @@ extension PDFAnnotation {
     }
 }
 
+@available(iOS 14, *)
 extension PDFPage {
     static func createPage(color _: UIColor, size _: CGSize) -> PDFPage {
         return PDFPage()

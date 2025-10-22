@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 final class AppViewController: BaseController, MainFeatureType {
     var controllerType: DebugSwiftFeature { .app }
 
@@ -95,6 +96,7 @@ final class AppViewController: BaseController, MainFeatureType {
     }
 }
 
+@available(iOS 14, *)
 extension AppViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch Sections(rawValue: section) {
@@ -266,6 +268,7 @@ extension AppViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
+@available(iOS 14, *)
 extension AppViewController {
     enum Sections: Int, CaseIterable {
         case actions
@@ -288,6 +291,7 @@ extension AppViewController {
     }
 }
 
+@available(iOS 14, *)
 extension AppViewController {
     enum ActionInfo: Int, CaseIterable {
         case crash

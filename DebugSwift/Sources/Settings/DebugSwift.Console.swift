@@ -7,7 +7,9 @@
 
 import UIKit
 
+@available(iOS 14, *)
 extension DebugSwift {
+    @available(iOS 14, *)
     public class Console: @unchecked Sendable {
         public static let shared = Console()
         private init() {}

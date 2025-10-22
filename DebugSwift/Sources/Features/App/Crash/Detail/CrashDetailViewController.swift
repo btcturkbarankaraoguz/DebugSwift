@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 final class CrashDetailViewController: BaseController {
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -102,6 +103,7 @@ final class CrashDetailViewController: BaseController {
     }
 }
 
+@available(iOS 14, *)
 extension CrashDetailViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in _: UITableView) -> Int {
         Features.allCases.count
@@ -178,6 +180,7 @@ extension CrashDetailViewController: UITableViewDataSource, UITableViewDelegate 
     }
 }
 
+@available(iOS 14, *)
 extension CrashDetailViewController {
     @MainActor
     enum Features: Int, CaseIterable {

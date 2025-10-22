@@ -8,6 +8,7 @@
 import Foundation
 import UserNotifications
 
+@available(iOS 14, *)
 extension DebugSwift {
     public enum PushNotification {
         
@@ -283,6 +284,7 @@ extension DebugSwift {
 
 // MARK: - Convenience Extensions
 
+@available(iOS 14, *)
 extension DebugSwift.PushNotification {
     /// Quick message notification
     public static func simulateMessage(from sender: String, message: String) {

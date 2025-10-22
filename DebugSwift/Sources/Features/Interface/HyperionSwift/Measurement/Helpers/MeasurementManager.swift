@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+@available(iOS 14, *)
 @MainActor
 class MeasurementManager {
     private var measurementViews: [UIView] = []

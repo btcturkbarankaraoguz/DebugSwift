@@ -8,6 +8,7 @@
 
 import Foundation
 
+@available(iOS 14, *)
 public protocol CustomHTTPProtocolDelegate: AnyObject {
     func urlSession(
         _ protocol: URLProtocol,
@@ -38,6 +39,7 @@ public protocol CustomHTTPProtocolDelegate: AnyObject {
     )
 }
 
+@available(iOS 14, *)
 public extension CustomHTTPProtocolDelegate {
     func urlSession(
         _: URLProtocol,

@@ -7,6 +7,7 @@
 
 import Foundation
 
+@available(iOS 14, *)
 struct HTTPRequestFilter {
     var methods: Set<String> = []
     var statusCodeRanges: [StatusCodeRange] = []
@@ -136,6 +137,7 @@ struct HTTPRequestFilter {
     }
 }
 
+@available(iOS 14, *)
 struct StatusCodeRange {
     let min: Int
     let max: Int

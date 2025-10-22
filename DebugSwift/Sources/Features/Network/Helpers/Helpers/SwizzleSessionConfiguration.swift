@@ -7,6 +7,7 @@
 
 import Foundation
 
+@available(iOS 14, *)
 extension URLSessionConfiguration {
     @objc
     static func swizzleMethods() {
@@ -21,6 +22,7 @@ extension URLSessionConfiguration {
 
 
 //MARK: - Private Helper functions
+@available(iOS 14, *)
 private extension URLSessionConfiguration {
     static func swizzleDefaultSessionConfiguration() {
         swizzleSessionConfigurationClassMethod(
@@ -96,6 +98,7 @@ private extension URLSessionConfiguration {
         }
     }
     
+    @available(iOS 14, *)
     @objc
     class var swizzledDefaultSessionConfiguration: URLSessionConfiguration {
         let configuration = URLSessionConfiguration.swizzledDefaultSessionConfiguration
@@ -113,6 +116,7 @@ private extension URLSessionConfiguration {
         return configuration
     }
     
+    @available(iOS 14, *)
     @objc
     class var swizzledEphemeralSessionConfiguration: URLSessionConfiguration {
         let configuration = URLSessionConfiguration.swizzledEphemeralSessionConfiguration

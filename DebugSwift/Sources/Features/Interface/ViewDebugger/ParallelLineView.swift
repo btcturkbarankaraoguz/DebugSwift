@@ -10,6 +10,7 @@ import CoreGraphics
 import UIKit
 
 /// A view that draws one or more parallel vertical lines.
+@available(iOS 14, *)
 final class ParallelLineView: UIView {
     var lineColors = [UIColor.black]
 

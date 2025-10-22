@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 final class InterfaceViewController: BaseController, MainFeatureType {
     var controllerType: DebugSwiftFeature { .interface }
 
@@ -85,6 +86,7 @@ final class InterfaceViewController: BaseController, MainFeatureType {
     }
 }
 
+@available(iOS 14, *)
 extension InterfaceViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         Features.allCasesWithPermissions.filter { $0.title != nil }.count
@@ -131,6 +133,7 @@ extension InterfaceViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
+@available(iOS 14, *)
 extension InterfaceViewController: MenuSwitchTableViewCellDelegate {
     func menuSwitchTableViewCell(_ cell: MenuSwitchTableViewCell, didSetOn isOn: Bool) {
         switch Features.allCasesWithPermissions[cell.tag] {
@@ -173,6 +176,7 @@ extension InterfaceViewController: MenuSwitchTableViewCellDelegate {
     }
 }
 
+@available(iOS 14, *)
 extension InterfaceViewController {
     @MainActor
     enum Features: Int, CaseIterable {

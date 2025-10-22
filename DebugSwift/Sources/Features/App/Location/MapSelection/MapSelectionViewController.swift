@@ -8,11 +8,13 @@
 import MapKit
 import UIKit
 
+@available(iOS 14, *)
 @MainActor
 protocol LocationSelectionDelegate: AnyObject {
     func didSelectLocation(_ location: CLLocation)
 }
 
+@available(iOS 14, *)
 final class MapSelectionViewController: BaseController {
     private var mapView: MKMapView?
 

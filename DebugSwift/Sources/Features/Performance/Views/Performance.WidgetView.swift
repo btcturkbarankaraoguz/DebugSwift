@@ -15,6 +15,7 @@ enum PerformanceSection: Int {
     case leaks
 }
 
+@available(iOS 14, *)
 final class PerformanceWidgetView: TopLevelViewWrapper {
     private let widgetMinimalOffset: CGFloat = 10
     private var tapGestureRecognizer: UITapGestureRecognizer!
@@ -117,6 +118,7 @@ final class PerformanceWidgetView: TopLevelViewWrapper {
     }
 }
 
+@available(iOS 14, *)
 @MainActor
 protocol PerformanceWidgetViewDelegate: AnyObject {
     func performanceWidgetView(

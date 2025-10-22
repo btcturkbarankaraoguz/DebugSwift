@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 final class ResourcesFilesViewController: BaseTableController {
     enum Constants {
         static let nextSizeAbbreviationThreshold: Double = 1024
@@ -233,6 +234,7 @@ final class ResourcesFilesViewController: BaseTableController {
 
 // MARK: - Table View Methods
 
+@available(iOS 14, *)
 extension ResourcesFilesViewController {
     override func numberOfSections(in _: UITableView) -> Int {
         2

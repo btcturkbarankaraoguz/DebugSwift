@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 final class AppViewModel: NSObject {
     @MainActor
     var infos: [UserInfo.Info] {

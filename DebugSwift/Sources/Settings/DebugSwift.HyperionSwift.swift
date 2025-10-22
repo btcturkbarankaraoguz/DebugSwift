@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 extension DebugSwift {
     
     /// HyperionSwift UI measurement tools

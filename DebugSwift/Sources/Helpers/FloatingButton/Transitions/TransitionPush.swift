@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 final class TransitionPush: NSObject, UIViewControllerAnimatedTransitioning {
     var transitionCtx: UIViewControllerContextTransitioning?
 
@@ -68,6 +69,7 @@ final class TransitionPush: NSObject, UIViewControllerAnimatedTransitioning {
 
 // MARK: - Animation end callback
 
+@available(iOS 14, *)
 extension TransitionPush: CAAnimationDelegate {
     nonisolated func animationDidStop(_: CAAnimation, finished _: Bool) {
         Task { @MainActor in

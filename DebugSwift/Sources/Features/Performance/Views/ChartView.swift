@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 final class ChartView: UIView {
     
     // MARK: - Public Properties
@@ -706,6 +707,7 @@ final class ChartView: UIView {
 
 // MARK: - Extensions
 
+@available(iOS 14, *)
 extension UIBezierPath {
     func addSmoothCurve(to point: CGPoint, controlPoint1: CGPoint, controlPoint2: CGPoint) {
         addCurve(to: point, controlPoint1: controlPoint1, controlPoint2: controlPoint2)

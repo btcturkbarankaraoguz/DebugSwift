@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 final class ResourcesViewController: BaseController, MainFeatureType {
     private enum Item: CaseIterable {
         case fileManager
@@ -96,6 +97,7 @@ final class ResourcesViewController: BaseController, MainFeatureType {
     }
 }
 
+@available(iOS 14, *)
 extension ResourcesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         items.count

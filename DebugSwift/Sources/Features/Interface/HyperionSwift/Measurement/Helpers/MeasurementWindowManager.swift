@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+@available(iOS 14, *)
 @MainActor
 public enum MeasurementWindowManager {
     public static let measurementStateChangedNotification = Notification.Name("MeasurementStateChanged")
@@ -83,6 +84,7 @@ public enum MeasurementWindowManager {
     }()
 }
 
+@available(iOS 14, *)
 @MainActor
 final class MeasurementWindow: UIWindow {
     override var description: String {
@@ -120,6 +122,7 @@ final class MeasurementWindow: UIWindow {
     }
 }
 
+@available(iOS 14, *)
 @MainActor
 final class CustomViewController: UIViewController, MeasurementViewDelegate {
     var attachedWindow: UIWindow? {

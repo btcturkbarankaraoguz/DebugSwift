@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 extension UIViewController {
     func setupKeyboardDismissGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -117,6 +118,7 @@ extension UIViewController {
 
 // MARK: - Helpers
 
+@available(iOS 14, *)
 final class CustomBarButtonItem: UIBarButtonItem {
     typealias UIBarButtonItemTargetClosure = (UIBarButtonItem) -> Void
 
@@ -161,7 +163,9 @@ final class CustomBarButtonItem: UIBarButtonItem {
     }
 }
 
+@available(iOS 14, *)
 extension UIViewController {
+    @available(iOS 14, *)
     struct ButtonAction {
         init(
             image: UIImage? = nil,

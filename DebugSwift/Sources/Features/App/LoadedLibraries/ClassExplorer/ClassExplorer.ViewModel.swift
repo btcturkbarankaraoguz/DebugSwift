@@ -8,6 +8,7 @@
 import Foundation
 import ObjectiveC
 
+@available(iOS 14, *)
 final class ClassExplorerViewModel {
     
     // MARK: - Types
@@ -19,6 +20,7 @@ final class ClassExplorerViewModel {
         case instanceState
     }
     
+    @available(iOS 14, *)
     struct PropertyInfo {
         let name: String
         let type: String
@@ -29,6 +31,7 @@ final class ClassExplorerViewModel {
         }
     }
     
+    @available(iOS 14, *)
     struct MethodInfo {
         let name: String
         let returnType: String
@@ -42,6 +45,7 @@ final class ClassExplorerViewModel {
         }
     }
     
+    @available(iOS 14, *)
     struct InstanceProperty {
         let name: String
         let value: String

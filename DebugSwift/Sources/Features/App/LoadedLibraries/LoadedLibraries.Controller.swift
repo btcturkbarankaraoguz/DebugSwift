@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 final class LoadedLibrariesViewController: BaseController {
     
     // MARK: - Properties
@@ -120,6 +121,7 @@ final class LoadedLibrariesViewController: BaseController {
 
 // MARK: - UITableViewDataSource
 
+@available(iOS 14, *)
 extension LoadedLibrariesViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -164,6 +166,7 @@ extension LoadedLibrariesViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
+@available(iOS 14, *)
 extension LoadedLibrariesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -182,6 +185,7 @@ extension LoadedLibrariesViewController: UITableViewDelegate {
 
 // MARK: - UISearchResultsUpdating
 
+@available(iOS 14, *)
 extension LoadedLibrariesViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {

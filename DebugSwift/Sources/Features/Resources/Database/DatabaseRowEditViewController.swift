@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 @MainActor
 final class DatabaseRowEditViewController: BaseController {
     

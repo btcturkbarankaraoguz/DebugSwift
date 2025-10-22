@@ -25,6 +25,7 @@ enum SwiftUIRenderActionsRow: Int {
     case clearPersistentOverlays
 }
 
+@available(iOS 14, *)
 final class InterfaceSwiftUIRenderController: BaseTableController, 
     MenuSwitchTableViewCellDelegate, SliderTableViewCellDelegate {
     

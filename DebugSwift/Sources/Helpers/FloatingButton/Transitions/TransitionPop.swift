@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 final class TransitionPop: NSObject, UIViewControllerAnimatedTransitioning {
     var transitionCtx: UIViewControllerContextTransitioning?
 
@@ -52,6 +53,7 @@ final class TransitionPop: NSObject, UIViewControllerAnimatedTransitioning {
 
 // MARK: - Animation end callback
 
+@available(iOS 14, *)
 extension TransitionPop: CAAnimationDelegate {
     nonisolated func animationDidStop(_: CAAnimation, finished _: Bool) {
         DispatchQueue.main.async { [weak self] in

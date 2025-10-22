@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 extension DebugSwift {
     public enum Performance {
         public static let shared = PerformanceManager()
@@ -29,6 +30,7 @@ extension DebugSwift {
             }
         }
         
+        @available(iOS 14, *)
         public class LeakDetector {
             /**
              Triggers the callback whenever a leaked `ViewController` or `View` is detected.
@@ -124,6 +126,7 @@ extension DebugSwift {
 
 // MARK: - Performance Manager
 
+@available(iOS 14, *)
 public class PerformanceManager: @unchecked Sendable {
     public let leakDetector = DebugSwift.Performance.LeakDetector()
     
@@ -143,6 +146,7 @@ public class PerformanceManager: @unchecked Sendable {
         }
     }
     
+    @available(iOS 14, *)
     public struct LeakData: Sendable {
         public let message: String
         public let controller: String?
@@ -160,6 +164,7 @@ public class PerformanceManager: @unchecked Sendable {
 
 // MARK: - Public Types
 
+@available(iOS 14, *)
 extension DebugSwift.Performance {
     public enum AutoFixMode: String, CaseIterable, Sendable {
         case disabled = "Disabled"
@@ -183,6 +188,7 @@ extension DebugSwift.Performance {
         }
     }
     
+    @available(iOS 14, *)
     public struct ThreadViolation: Sendable {
         public let id: UUID
         public let timestamp: Date

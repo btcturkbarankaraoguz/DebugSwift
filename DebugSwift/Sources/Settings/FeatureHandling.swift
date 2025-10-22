@@ -8,6 +8,7 @@
 import CoreLocation
 import UIKit
 
+@available(iOS 14, *)
 @MainActor
 enum FeatureHandling {
     static var enabledBetaFeatures: [DebugSwiftBetaFeature] = []

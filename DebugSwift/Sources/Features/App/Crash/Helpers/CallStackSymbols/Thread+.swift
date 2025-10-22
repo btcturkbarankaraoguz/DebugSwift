@@ -7,10 +7,12 @@
 
 import Foundation
 
+@available(iOS 14, *)
 extension Thread {
     /**
      An array of string containing parsed class names and method names
      */
+    @available(iOS 14, *)
     public class func simpleCallStackSymbols(
         _: [String] = Thread.callStackSymbols
     ) -> [String] {
@@ -73,6 +75,7 @@ extension Thread {
     /**
      A formatted string containing parsed class names and method names
      */
+    @available(iOS 14, *)
     public class var simpleCallStackString: String {
         simpleCallStackSymbols().joined(
             separator: "\n"

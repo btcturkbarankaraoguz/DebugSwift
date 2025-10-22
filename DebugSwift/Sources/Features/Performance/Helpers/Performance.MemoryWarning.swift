@@ -8,6 +8,7 @@
 import UIKit
 import os.log
 
+@available(iOS 14, *)
 @MainActor
 final class PerformanceMemoryWarning {
     

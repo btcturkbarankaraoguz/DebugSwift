@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 final class MenuChartTableViewCell: UITableViewCell {
     let chartView: ChartView = {
         let chartView = ChartView()

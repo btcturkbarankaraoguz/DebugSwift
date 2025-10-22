@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 final class DebuggerDetailViewController: UIViewController {
     let imageView: UIImageView = {
         let imageView = UIImageView()

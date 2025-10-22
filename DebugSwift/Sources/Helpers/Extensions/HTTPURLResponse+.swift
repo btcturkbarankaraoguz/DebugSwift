@@ -8,6 +8,7 @@
 
 import Foundation
 
+@available(iOS 14, *)
 extension HTTPURLResponse {
     func expires() -> Date? {
         if let cc = (allHeaderFields["Cache-Control"] as? String)?.lowercased(),

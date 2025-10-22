@@ -7,6 +7,7 @@
 
 import Foundation
 
+@available(iOS 14, *)
 extension FileHandle {
     private func fdZero(_ set: inout fd_set) {
         set.fds_bits = (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)

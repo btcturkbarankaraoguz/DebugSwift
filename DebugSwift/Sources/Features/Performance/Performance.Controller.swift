@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 final class PerformanceViewController: BaseTableController, PerformanceToolkitDelegate, MainFeatureType {
     var controllerType: DebugSwiftFeature { .performance }
 
@@ -520,6 +521,7 @@ final class PerformanceViewController: BaseTableController, PerformanceToolkitDe
 
 // MARK: - MenuSwitchTableViewCellDelegate
 
+@available(iOS 14, *)
 extension PerformanceViewController: MenuSwitchTableViewCellDelegate {
     func menuSwitchTableViewCell(
         _: MenuSwitchTableViewCell, didSetOn isOn: Bool
@@ -530,6 +532,7 @@ extension PerformanceViewController: MenuSwitchTableViewCellDelegate {
 
 // MARK: - MenuSegmentedControlTableViewCellDelegate
 
+@available(iOS 14, *)
 extension PerformanceViewController: MenuSegmentedControlTableViewCellDelegate {
     func menuSegmentedControlTableViewCell(
         _: MenuSegmentedControlTableViewCell,
@@ -544,12 +547,14 @@ extension PerformanceViewController: MenuSegmentedControlTableViewCellDelegate {
 
 // MARK: - PerformanceToolkitDelegate
 
+@available(iOS 14, *)
 extension PerformanceViewController {
     func performanceToolkitDidUpdateStats(_: PerformanceToolkit) {
         reloadStatisticsSection(animated: false)
     }
 }
 
+@available(iOS 14, *)
 extension PerformanceViewController: PerformanceWidgetViewDelegate {
     func performanceWidgetView(
         _: PerformanceWidgetView, didTapOnSection _: PerformanceSection

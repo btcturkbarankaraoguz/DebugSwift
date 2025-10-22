@@ -8,6 +8,7 @@
 import Foundation
 import SQLite3
 
+@available(iOS 14, *)
 final class SQLiteManager: @unchecked Sendable {
     static let shared = SQLiteManager()
     

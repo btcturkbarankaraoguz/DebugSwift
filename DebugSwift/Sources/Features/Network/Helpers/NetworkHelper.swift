@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 final class NetworkHelper: @unchecked Sendable {
     @MainActor static let shared = NetworkHelper()
 

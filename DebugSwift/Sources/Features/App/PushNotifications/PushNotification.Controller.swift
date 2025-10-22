@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 class PushNotificationController: BaseController {
     
     private let tableView: UITableView = {
@@ -141,6 +142,7 @@ class PushNotificationController: BaseController {
 
 // MARK: - UITableViewDataSource
 
+@available(iOS 14, *)
 extension PushNotificationController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -191,6 +193,7 @@ extension PushNotificationController: UITableViewDataSource {
 
 // MARK: - Cell Creation Methods
 
+@available(iOS 14, *)
 extension PushNotificationController {
     
     private func statusCellForRow(at row: Int) -> UITableViewCell {
@@ -324,6 +327,7 @@ extension PushNotificationController {
 
 // MARK: - UITableViewDelegate
 
+@available(iOS 14, *)
 extension PushNotificationController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -410,6 +414,7 @@ extension PushNotificationController: UITableViewDelegate {
 
 // MARK: - Action Sheets and Alerts
 
+@available(iOS 14, *)
 extension PushNotificationController {
     
     private func showTestScenariosActionSheet() {
@@ -528,6 +533,7 @@ extension PushNotificationController {
 
 // MARK: - MenuSwitchTableViewCellDelegate
 
+@available(iOS 14, *)
 extension PushNotificationController: MenuSwitchTableViewCellDelegate {
     func menuSwitchTableViewCell(_ cell: MenuSwitchTableViewCell, didSetOn isOn: Bool) {
         if isOn {

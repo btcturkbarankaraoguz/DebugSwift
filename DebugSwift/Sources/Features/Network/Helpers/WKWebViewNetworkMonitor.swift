@@ -13,6 +13,7 @@ import ObjectiveC.runtime
 // MARK: - WKWebView Network Monitor
 
 /// A Swift 6-compatible WKWebView network monitoring system that integrates with DebugSwift
+@available(iOS 14, *)
 @MainActor
 final class WKWebViewNetworkMonitor: NSObject, Sendable {
     static let shared = WKWebViewNetworkMonitor()
@@ -41,6 +42,7 @@ final class WKWebViewNetworkMonitor: NSObject, Sendable {
 
 // MARK: - Swizzler
 
+@available(iOS 14, *)
 enum WKWebViewSwizzler {
     private nonisolated(unsafe) static var isInstalled = false
     
@@ -74,6 +76,7 @@ enum WKWebViewSwizzler {
 
 private nonisolated(unsafe) var kInjectedConfigKey: UInt8 = 0
 
+@available(iOS 14, *)
 extension WKWebView {
     
     @objc 
@@ -132,6 +135,7 @@ extension WKWebView {
                     
                     // URL Information
                     url: window.location.href,
+                    @available(iOS 14, *)
                     protocol: window.location.protocol,
                     hostname: window.location.hostname,
                     port: window.location.port,
@@ -483,6 +487,7 @@ extension WKWebView {
 
 // MARK: - Message Handler
 
+@available(iOS 14, *)
 final class WebViewNetworkMessageHandler: NSObject, WKScriptMessageHandler {
     static let shared = WebViewNetworkMessageHandler()
     
@@ -774,6 +779,7 @@ final class WebViewNetworkMessageHandler: NSObject, WKScriptMessageHandler {
 
 // MARK: - Request Cache
 
+@available(iOS 14, *)
 struct WebViewRequestInfo: Sendable {
     let requestId: String
     let url: String
@@ -822,6 +828,7 @@ struct WebViewRequestInfo: Sendable {
     }
 }
 
+@available(iOS 14, *)
 final class WebViewRequestCache: @unchecked Sendable {
     static let shared = WebViewRequestCache()
     

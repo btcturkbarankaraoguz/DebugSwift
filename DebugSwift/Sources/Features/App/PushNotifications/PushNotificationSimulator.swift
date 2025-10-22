@@ -9,6 +9,7 @@ import Foundation
 import UserNotifications
 import UIKit
 
+@available(iOS 14, *)
 @MainActor
 public class PushNotificationSimulator: NSObject, ObservableObject {
     public static let shared = PushNotificationSimulator()
@@ -351,6 +352,7 @@ public class PushNotificationSimulator: NSObject, ObservableObject {
 
 // MARK: - UNUserNotificationCenterDelegate
 
+@available(iOS 14, *)
 extension PushNotificationSimulator: UNUserNotificationCenterDelegate {
     nonisolated public func userNotificationCenter(
         _ center: UNUserNotificationCenter,

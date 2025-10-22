@@ -7,11 +7,13 @@
 
 import UIKit
 
+@available(iOS 14, *)
 @MainActor
 protocol ResourcesGenericEditDelegate: AnyObject {
     func didSaveItem(key: String, value: String, originalKey: String?)
 }
 
+@available(iOS 14, *)
 final class ResourcesGenericEditViewController: BaseController {
     
     weak var delegate: ResourcesGenericEditDelegate?
@@ -233,6 +235,7 @@ final class ResourcesGenericEditViewController: BaseController {
 }
 
 // MARK: - UITextFieldDelegate
+@available(iOS 14, *)
 extension ResourcesGenericEditViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == keyTextField {
@@ -243,6 +246,7 @@ extension ResourcesGenericEditViewController: UITextFieldDelegate {
 }
 
 // MARK: - UITextViewDelegate
+@available(iOS 14, *)
 extension ResourcesGenericEditViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == .placeholderText && textView.text == valuePlaceholder {

@@ -209,13 +209,13 @@ extension AuthenticationUI {
     }
 }
 
+@available(iOS 14, *)
 public struct AuthenticationPolicy: OptionSet, Sendable {
     /**
      User presence policy using Touch ID or Passcode. Touch ID does not
      have to be available or enrolled. Item is still accessible by Touch ID
      even if fingers are added or removed.
      */
-    @available(iOS 8.0, OSX 10.10, watchOS 2.0, tvOS 8.0, *)
     public static let userPresence = AuthenticationPolicy(rawValue: 1 << 0)
 
     /**
@@ -223,13 +223,11 @@ public struct AuthenticationPolicy: OptionSet, Sendable {
      at least one finger must be enrolled. With Face ID user has to be enrolled. Item is still accessible by Touch ID even
      if fingers are added or removed. Item is still accessible by Face ID if user is re-enrolled.
      */
-    @available(iOS 11.3, OSX 10.13.4, watchOS 4.3, tvOS 11.3, *)
     public static let biometryAny = AuthenticationPolicy(rawValue: 1 << 1)
 
     /**
      Deprecated, please use biometryAny instead.
      */
-    @available(iOS, introduced: 9.0, deprecated: 11.3, renamed: "biometryAny")
     @available(OSX, introduced: 10.12.1, deprecated: 10.13.4, renamed: "biometryAny")
     @available(watchOS, introduced: 2.0, deprecated: 4.3, renamed: "biometryAny")
     @available(tvOS, introduced: 9.0, deprecated: 11.3, renamed: "biometryAny")
@@ -239,13 +237,11 @@ public struct AuthenticationPolicy: OptionSet, Sendable {
      Constraint: Touch ID from the set of currently enrolled fingers. Touch ID must be available and at least one finger must
      be enrolled. When fingers are added or removed, the item is invalidated. When Face ID is re-enrolled this item is invalidated.
      */
-    @available(iOS 11.3, OSX 10.13, watchOS 4.3, tvOS 11.3, *)
     public static let biometryCurrentSet = AuthenticationPolicy(rawValue: 1 << 3)
 
     /**
      Deprecated, please use biometryCurrentSet instead.
      */
-    @available(iOS, introduced: 9.0, deprecated: 11.3, renamed: "biometryCurrentSet")
     @available(OSX, introduced: 10.12.1, deprecated: 10.13.4, renamed: "biometryCurrentSet")
     @available(watchOS, introduced: 2.0, deprecated: 4.3, renamed: "biometryCurrentSet")
     @available(tvOS, introduced: 9.0, deprecated: 11.3, renamed: "biometryCurrentSet")
@@ -254,7 +250,6 @@ public struct AuthenticationPolicy: OptionSet, Sendable {
     /**
      Constraint: Device passcode
      */
-    @available(iOS 9.0, OSX 10.11, watchOS 2.0, tvOS 9.0, *)
     public static let devicePasscode = AuthenticationPolicy(rawValue: 1 << 4)
 
     /**
@@ -270,27 +265,23 @@ public struct AuthenticationPolicy: OptionSet, Sendable {
      Constraint logic operation: when using more than one constraint,
      at least one of them must be satisfied.
      */
-    @available(iOS 9.0, OSX 10.12.1, watchOS 2.0, tvOS 9.0, *)
     public static let or = AuthenticationPolicy(rawValue: 1 << 14)
 
     /**
      Constraint logic operation: when using more than one constraint,
      all must be satisfied.
      */
-    @available(iOS 9.0, OSX 10.12.1, watchOS 2.0, tvOS 9.0, *)
     public static let and = AuthenticationPolicy(rawValue: 1 << 15)
 
     /**
      Create access control for private key operations (i.e. sign operation)
      */
-    @available(iOS 9.0, OSX 10.12.1, watchOS 2.0, tvOS 9.0, *)
     public static let privateKeyUsage = AuthenticationPolicy(rawValue: 1 << 30)
 
     /**
      Security: Application provided password for data encryption key generation.
      This is not a constraint but additional item encryption mechanism.
      */
-    @available(iOS 9.0, OSX 10.12.1, watchOS 2.0, tvOS 9.0, *)
     public static let applicationPassword = AuthenticationPolicy(rawValue: 1 << 31)
 
     #if swift(>=2.3)
@@ -308,6 +299,7 @@ public struct AuthenticationPolicy: OptionSet, Sendable {
     #endif
 }
 
+@available(iOS 14, *)
 public struct Attributes {
     public var `class`: String? {
         attributes[Class] as? String
@@ -431,6 +423,7 @@ public struct Attributes {
     }
 }
 
+@available(iOS 14, *)
 public final class Keychain {
     public var itemClass: ItemClass {
         options.itemClass
@@ -462,7 +455,6 @@ public final class Keychain {
         options.accessibility
     }
 
-    @available(iOS 8.0, OSX 10.10, *)
     @available(watchOS, unavailable)
     public var authenticationPolicy: AuthenticationPolicy? {
         options.authenticationPolicy
@@ -480,19 +472,16 @@ public final class Keychain {
         options.comment
     }
 
-    @available(iOS 8.0, OSX 10.10, *)
     @available(watchOS, unavailable)
     public var authenticationPrompt: String? {
         options.authenticationPrompt
     }
 
-    @available(iOS 9.0, OSX 10.11, *)
     public var authenticationUI: AuthenticationUI {
         options.authenticationUI ?? .allow
     }
 
     #if os(iOS) || os(OSX)
-    @available(iOS 9.0, OSX 10.11, *)
     public var authenticationContext: LAContext? {
         options.authenticationContext as? LAContext
     }
@@ -558,7 +547,6 @@ public final class Keychain {
         return Keychain(options)
     }
 
-    @available(iOS 8.0, OSX 10.10, *)
     @available(watchOS, unavailable)
     public func accessibility(_ accessibility: Accessibility, authenticationPolicy: AuthenticationPolicy) -> Keychain {
         var options = options
@@ -591,7 +579,6 @@ public final class Keychain {
         return Keychain(options)
     }
 
-    @available(iOS 8.0, OSX 10.10, *)
     @available(watchOS, unavailable)
     public func authenticationPrompt(_ authenticationPrompt: String) -> Keychain {
         var options = options
@@ -599,7 +586,6 @@ public final class Keychain {
         return Keychain(options)
     }
 
-    @available(iOS 9.0, OSX 10.11, *)
     public func authenticationUI(_ authenticationUI: AuthenticationUI) -> Keychain {
         var options = options
         options.authenticationUI = authenticationUI
@@ -607,7 +593,6 @@ public final class Keychain {
     }
 
     #if os(iOS) || os(OSX)
-    @available(iOS 9.0, OSX 10.11, *)
     public func authenticationContext(_ authenticationContext: LAContext) -> Keychain {
         var options = options
         options.authenticationContext = authenticationContext
@@ -870,6 +855,7 @@ public final class Keychain {
 
     // MARK: 
 
+    @available(iOS 14, *)
     public final class func allKeys(_ itemClass: ItemClass) -> [(String, String)] {
         var query = [String: Any]()
         query[Class] = itemClass.rawValue
@@ -912,6 +898,7 @@ public final class Keychain {
         #endif
     }
 
+    @available(iOS 14, *)
     public final class func allItems(_ itemClass: ItemClass) -> [[String: Any]] {
         var query = [String: Any]()
         query[Class] = itemClass.rawValue
@@ -943,7 +930,6 @@ public final class Keychain {
     }
 
     #if os(iOS) && !targetEnvironment(macCatalyst)
-    @available(iOS 8.0, *)
     public func getSharedPassword(_ completion: @escaping (_ account: String?, _ password: String?, _ error: Error?) -> Void = { _, _, _ in }) {
         if let domain = server.host {
             Self.requestSharedWebCredential(domain: domain, account: nil) { credentials, error in
@@ -963,7 +949,6 @@ public final class Keychain {
     #endif
 
     #if os(iOS) && !targetEnvironment(macCatalyst)
-    @available(iOS 8.0, *)
     public func getSharedPassword(_ account: String, completion: @escaping (_ password: String?, _ error: Error?) -> Void = { _, _ in }) {
         if let domain = server.host {
             Self.requestSharedWebCredential(domain: domain, account: account) { credentials, error in
@@ -985,14 +970,12 @@ public final class Keychain {
     #endif
 
     #if os(iOS) && !targetEnvironment(macCatalyst)
-    @available(iOS 8.0, *)
     public func setSharedPassword(_ password: String, account: String, completion: @escaping (_ error: Error?) -> Void = { _ in }) {
         setSharedPassword(password as String?, account: account, completion: completion)
     }
     #endif
 
     #if os(iOS) && !targetEnvironment(macCatalyst)
-    @available(iOS 8.0, *)
     fileprivate func setSharedPassword(_ password: String?, account: String, completion: @escaping (_ error: Error?) -> Void = { _ in }) {
         if let domain = server.host {
             if #available(iOS 14.0, *) {
@@ -1029,35 +1012,30 @@ public final class Keychain {
     #endif
 
     #if os(iOS) && !targetEnvironment(macCatalyst)
-    @available(iOS 8.0, *)
     public func removeSharedPassword(_ account: String, completion: @escaping (_ error: Error?) -> Void = { _ in }) {
         setSharedPassword(nil, account: account, completion: completion)
     }
     #endif
 
     #if os(iOS) && !targetEnvironment(macCatalyst)
-    @available(iOS 8.0, *)
     public final class func requestSharedWebCredential(_ completion: @escaping (_ credentials: [[String: String]], _ error: Error?) -> Void = { _, _ in }) {
         requestSharedWebCredential(domain: nil, account: nil, completion: completion)
     }
     #endif
 
     #if os(iOS) && !targetEnvironment(macCatalyst)
-    @available(iOS 8.0, *)
     public final class func requestSharedWebCredential(domain: String, completion: @escaping (_ credentials: [[String: String]], _ error: Error?) -> Void = { _, _ in }) {
         requestSharedWebCredential(domain: domain, account: nil, completion: completion)
     }
     #endif
 
     #if os(iOS) && !targetEnvironment(macCatalyst)
-    @available(iOS 8.0, *)
     public final class func requestSharedWebCredential(domain: String, account: String, completion: @escaping (_ credentials: [[String: String]], _ error: Error?) -> Void = { _, _ in }) {
         requestSharedWebCredential(domain: Optional(domain), account: Optional(account)!, completion: completion)
     }
     #endif
 
     #if os(iOS) && !targetEnvironment(macCatalyst)
-    @available(iOS 8.0, *)
     fileprivate final class func requestSharedWebCredential(domain: String?, account: String?, completion: @escaping (_ credentials: [[String: String]], _ error: Error?) -> Void) {
         if #available(iOS 14.0, *) {
             // Note: ASAuthorizationController must be presented from a view controller
@@ -1104,7 +1082,6 @@ public final class Keychain {
      @abstract Returns a randomly generated password.
      @return String password in the form xxx-xxx-xxx-xxx where x is taken from the sets "abcdefghkmnopqrstuvwxy", "ABCDEFGHJKLMNPQRSTUVWXYZ", "3456789" with at least one character from each set being present.
      */
-    @available(iOS 8.0, *)
     public final class func generatePassword() -> String {
         if #available(iOS 14.0, *) {
             // Generate password manually for iOS 14.0+ to avoid deprecated API
@@ -1190,6 +1167,7 @@ public final class Keychain {
         return []
     }
 
+    @available(iOS 14, *)
     private final class func prettify(itemClass: ItemClass, items: [[String: Any]]) -> [[String: Any]] {
         return items.map { attributes -> [String: Any] in
             var item = [String: Any]()
@@ -1247,6 +1225,7 @@ public final class Keychain {
 
     // MARK: 
 
+    @available(iOS 14, *)
     @discardableResult
     private final class func securityError(status: OSStatus) -> Error {
         let error = Status(status: status)
@@ -1263,6 +1242,7 @@ public final class Keychain {
     }
 }
 
+@available(iOS 14, *)
 struct Options {
     var itemClass: ItemClass = .genericPassword
 
@@ -1387,6 +1367,7 @@ private let UseAuthenticationUISkip = String(kSecUseAuthenticationUISkip)
 private let SharedPassword = String(kSecSharedPassword)
 #endif
 
+@available(iOS 14, *)
 extension Keychain: CustomStringConvertible, CustomDebugStringConvertible {
     public var description: String {
         let items = allItems()
@@ -1407,6 +1388,7 @@ extension Keychain: CustomStringConvertible, CustomDebugStringConvertible {
     }
 }
 
+@available(iOS 14, *)
 extension Options {
     func query(ignoringAttributeSynchronizable: Bool = true) -> [String: Any] {
         var query = [String: Any]()
@@ -1506,6 +1488,7 @@ extension Options {
 
 // MARK: 
 
+@available(iOS 14, *)
 extension Attributes: CustomStringConvertible, CustomDebugStringConvertible {
     public var description: String {
         "\(attributes)"
@@ -1516,6 +1499,7 @@ extension Attributes: CustomStringConvertible, CustomDebugStringConvertible {
     }
 }
 
+@available(iOS 14, *)
 extension ItemClass: RawRepresentable, CustomStringConvertible {
     public init?(rawValue: String) {
         switch rawValue {
@@ -1547,6 +1531,7 @@ extension ItemClass: RawRepresentable, CustomStringConvertible {
     }
 }
 
+@available(iOS 14, *)
 extension ProtocolType: RawRepresentable, CustomStringConvertible {
     public init?(rawValue: String) {
         switch rawValue {
@@ -1752,6 +1737,7 @@ extension ProtocolType: RawRepresentable, CustomStringConvertible {
     }
 }
 
+@available(iOS 14, *)
 extension AuthenticationType: RawRepresentable, CustomStringConvertible {
     public init?(rawValue: String) {
         switch rawValue {
@@ -1819,6 +1805,7 @@ extension AuthenticationType: RawRepresentable, CustomStringConvertible {
     }
 }
 
+@available(iOS 14, *)
 extension Accessibility: RawRepresentable, CustomStringConvertible {
     public init?(rawValue: String) {
         if #available(OSX 10.10, *) {
@@ -1905,6 +1892,7 @@ extension Accessibility: RawRepresentable, CustomStringConvertible {
     }
 }
 
+@available(iOS 14, *)
 extension CFError {
     var error: NSError {
         let domain = CFErrorGetDomain(self) as String
@@ -2321,6 +2309,7 @@ public enum Status: OSStatus, Error {
     case unexpectedError = -99_999
 }
 
+@available(iOS 14, *)
 extension Status: RawRepresentable, CustomStringConvertible {
     public init(status: OSStatus) {
         if let mappedStatus = Status(rawValue: status) {
@@ -3142,6 +3131,7 @@ extension Status: RawRepresentable, CustomStringConvertible {
     }
 }
 
+@available(iOS 14, *)
 extension Status: CustomNSError {
     public static let errorDomain = KeychainAccessErrorDomain
 
@@ -3185,6 +3175,7 @@ private final class AuthorizationControllerDelegate: NSObject, ASAuthorizationCo
 
 // MARK: - Helper function for handling authentication UI
 
+@available(iOS 14, *)
 private func setupAuthenticationUI(query: inout [String: Any], options: Options, authenticationUI: AuthenticationUI?) {
     #if os(iOS) || os(OSX)
     if #available(iOS 14.0, macOS 11.0, *) {

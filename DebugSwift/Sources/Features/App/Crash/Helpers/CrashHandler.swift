@@ -17,6 +17,7 @@ func calculate() -> Int {
 }
 
 // Encapsulate all global state in a thread-safe singleton
+@available(iOS 14, *)
 private final class CrashHandlerGlobalState: @unchecked Sendable {
     static let shared = CrashHandlerGlobalState()
     
@@ -98,6 +99,7 @@ private final class CrashHandlerGlobalState: @unchecked Sendable {
     }
 }
 
+@available(iOS 14, *)
 public class CrashUncaughtExceptionHandler: @unchecked Sendable {
     private static let lock = NSLock()
     nonisolated(unsafe) private static var _exceptionReceiveClosure: ((Int32?, NSException?, String, [String]) -> Void)?
@@ -121,6 +123,7 @@ public class CrashUncaughtExceptionHandler: @unchecked Sendable {
     }
 }
 
+@available(iOS 14, *)
 func UncaughtExceptionHandler(exception: NSException) {
     let arr = exception.callStackSymbols
     let reason = exception.reason ?? ""
@@ -135,6 +138,7 @@ func UncaughtExceptionHandler(exception: NSException) {
 
 typealias SignalHandler = (Int32, UnsafeMutablePointer<__siginfo>?, UnsafeMutableRawPointer?) -> Void
 
+@available(iOS 14, *)
 public class CrashSignalExceptionHandler: @unchecked Sendable {
     private static let lock = NSLock()
     nonisolated(unsafe) private static var _exceptionReceiveClosure: ((Int32?, NSException?, String) -> Void)?
@@ -186,6 +190,7 @@ public class CrashSignalExceptionHandler: @unchecked Sendable {
     }
 }
 
+@available(iOS 14, *)
 func SignalRegister(signal: Int32) {
     var action = sigaction()
     action.__sigaction_u.__sa_sigaction = CrashSignalHandler
@@ -195,6 +200,7 @@ func SignalRegister(signal: Int32) {
     sigaction(signal, &action, empty)
 }
 
+@available(iOS 14, *)
 func CrashSignalHandler(
     signal: Int32,
     info: UnsafeMutablePointer<__siginfo>?,
@@ -237,6 +243,7 @@ func ClearSignalRigister() {
     signal(SIGSYS, SIG_DFL)
 }
 
+@available(iOS 14, *)
 public class CrashHandler: @unchecked Sendable {
     public var exceptionReceiveClosure: ((Int32?, NSException?, String) -> Void)?
 

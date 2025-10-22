@@ -9,7 +9,9 @@
 import QuartzCore
 import UIKit
 
+@available(iOS 14, *)
 public class FPSCounter: NSObject {
+    @available(iOS 14, *)
     class DisplayLinkProxy: NSObject {
         @objc weak var parentCounter: FPSCounter?
         @objc func updateFromDisplayLink(_ displayLink: CADisplayLink) {

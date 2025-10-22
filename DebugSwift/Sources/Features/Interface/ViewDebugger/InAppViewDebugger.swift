@@ -9,10 +9,12 @@
 import UIKit
 
 /// Exposes APIs for presenting the view debugger.
+@available(iOS 14, *)
 @MainActor
 final class InAppViewDebugger: NSObject {
     /// Takes a snapshot of the application's key window and presents the debugger
     /// view controller from the root view controller.
+    @available(iOS 14, *)
     final class func present() {
         presentForWindow(UIApplication.keyWindow)
     }
@@ -25,6 +27,7 @@ final class InAppViewDebugger: NSObject {
     ///   - configuration: Optional configuration for the view debugger.
     ///   - completion: Completion block to be called once the view debugger has
     ///   been presented.
+    @available(iOS 14, *)
     final class func presentForWindow(
         _ window: UIWindow?,
         configuration: Configuration? = nil,
@@ -51,6 +54,7 @@ final class InAppViewDebugger: NSObject {
     ///   - configuration: Optional configuration for the view debugger.
     ///   - completion: Completion block to be called once the view debugger has
     ///   been presented.
+    @available(iOS 14, *)
     final class func presentForView(
         _ view: UIView?,
         configuration: Configuration? = nil,
@@ -71,6 +75,7 @@ final class InAppViewDebugger: NSObject {
     ///   - configuration: Optional configuration for the view debugger.
     ///   - completion: Completion block to be called once the view debugger has
     ///   been presented.
+    @available(iOS 14, *)
     final class func presentForViewController(_ viewController: UIViewController?, configuration: Configuration? = nil, completion: (() -> Void)? = nil) {
         guard let view = viewController?.view else {
             return
@@ -89,6 +94,7 @@ final class InAppViewDebugger: NSObject {
     ///   - configuration: Optional configuration for the view debugger.
     ///   - completion: Completion block to be called once the view debugger has
     ///   been presented.
+    @available(iOS 14, *)
     final class func presentWithSnapshot(
         _ snapshot: Snapshot,
         rootViewController _: UIViewController?,

@@ -8,6 +8,7 @@
 
 import Foundation
 
+@available(iOS 14, *)
 extension Data {
     func formattedSize() -> String {
         let byteCountFormatter = ByteCountFormatter()
@@ -66,12 +67,14 @@ extension Data {
     }
 }
 
+@available(iOS 14, *)
 extension [String: String] {
     func formattedCurlString() -> String {
         map { "\($0.key): \($0.value)" }.joined(separator: "\\n-H ")
     }
 }
 
+@available(iOS 14, *)
 extension [String: Any] {
     func formattedCurlString() -> String {
         return map { key, value in
@@ -80,6 +83,7 @@ extension [String: Any] {
     }
 }
 
+@available(iOS 14, *)
 extension Data {
     func formattedCurlString() -> String {
         if let string = String(data: self, encoding: .utf8) {
@@ -89,12 +93,14 @@ extension Data {
     }
 }
 
+@available(iOS 14, *)
 extension String {
     func escapedForCurl() -> String {
         replacingOccurrences(of: "'", with: "\\'")
     }
 }
 
+@available(iOS 14, *)
 extension URLRequest {
     func formattedCurlString() -> String {
         var curlCommand = "curl -X \(httpMethod ?? "")"

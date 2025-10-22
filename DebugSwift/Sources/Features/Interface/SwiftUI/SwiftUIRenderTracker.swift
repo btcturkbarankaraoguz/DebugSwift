@@ -7,6 +7,7 @@ import SwiftUI
 import UIKit
 
 /// Weak reference to track original views for overlay cleanup
+@available(iOS 14, *)
 private class WeakViewReference {
     weak var view: UIView?
     
@@ -15,6 +16,7 @@ private class WeakViewReference {
     }
 }
 
+@available(iOS 14, *)
 @MainActor
 public class SwiftUIRenderTracker: @unchecked Sendable {
     public static let shared = SwiftUIRenderTracker()
@@ -397,6 +399,7 @@ public class SwiftUIRenderTracker: @unchecked Sendable {
 
 // MARK: - UIView Extensions for SwiftUI Hosting Detection
 
+@available(iOS 14, *)
 extension UIView {
     // MARK: - SwiftUI Render Tracking
     
@@ -532,12 +535,14 @@ extension UIView {
 
 // MARK: - Notification Names
 
+@available(iOS 14, *)
 extension Notification.Name {
     static let swiftUIViewDidRender = Notification.Name("SwiftUIViewDidRender")
 }
 
 // MARK: - SwiftUI _printChanges Integration
 
+@available(iOS 14, *)
 public struct RenderTrackingModifier: ViewModifier {
     let viewName: String
     
@@ -557,6 +562,7 @@ public struct RenderTrackingModifier: ViewModifier {
     }
 }
 
+@available(iOS 14, *)
 private struct RenderDetectionView: View {
     let viewName: String
     @State private var renderCount = 0
@@ -600,6 +606,7 @@ private struct RenderDetectionView: View {
 
 // MARK: - SwiftUI View Extension
 
+@available(iOS 14, *)
 public extension View {
     /// Adds render tracking to a SwiftUI view using _printChanges
     /// - Parameter viewName: Custom name for the view (defaults to type name)

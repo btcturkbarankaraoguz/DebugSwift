@@ -9,6 +9,7 @@
 import SceneKit
 import UIKit
 
+@available(iOS 14, *)
 @MainActor
 protocol SnapshotViewDelegate: AnyObject {
     /// Called when an element is select by tapping on it.
@@ -28,6 +29,7 @@ protocol SnapshotViewDelegate: AnyObject {
 
 /// A view that renders an interactive 3D representation of a UI element
 /// hierarchy snapshot.
+@available(iOS 14, *)
 final class SnapshotView: UIView {
     weak var delegate: SnapshotViewDelegate?
 
@@ -367,6 +369,7 @@ final class SnapshotView: UIView {
 
 /// Container that holds references to the SceneKit nodes associated with a
 /// snapshot.
+@available(iOS 14, *)
 private final class SnapshotNodes {
     let snapshot: Snapshot
     let depth: Int
@@ -405,6 +408,7 @@ private func findNearestAncestorSnapshotNode(node: SCNNode?) -> SCNNode? {
 }
 
 /// Returns a node that renders a highlight overlay over a specified snapshot.
+@available(iOS 14, *)
 @MainActor
 private func highlightNode(snapshot: Snapshot, color: UIColor) -> SCNNode {
     let path = UIBezierPath(rect: CGRect(origin: .zero, size: snapshot.frame.size))
@@ -422,6 +426,7 @@ private func highlightNode(snapshot: Snapshot, color: UIColor) -> SCNNode {
 
 /// Returns a SceneKit node that recursively renders a hierarchy of UI elements
 /// starting at the specified snapshot.
+@available(iOS 14, *)
 @MainActor
 private func snapshotNode(
     snapshot: Snapshot,
@@ -535,6 +540,7 @@ private func snapshotNode(
 }
 
 /// Returns a node that renders a snapshot image.
+@available(iOS 14, *)
 @MainActor
 private func snapshotNode(snapshot: Snapshot, configuration: SnapshotViewConfiguration) -> SCNNode {
     let size = snapshot.frame.size
@@ -628,6 +634,7 @@ private func borderNode(node: SCNNode, color: UIColor) -> SCNNode {
 
 /// Returns a node that renders a header above a snapshot node.
 /// The header contains the name text from the element, if specified.
+@available(iOS 14, *)
 @MainActor
 private func headerNode(
     snapshot: Snapshot,
@@ -675,6 +682,7 @@ private func nameHeaderShape(frame: CGRect, color: UIColor, cornerRadius: CGFloa
 }
 
 /// Returns a text geometry used to render text inside the header.
+@available(iOS 14, *)
 @MainActor
 private func nameTextGeometry(label: ElementLabel, font: UIFont) -> SCNText? {
     guard let name = label.name else {

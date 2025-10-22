@@ -6,6 +6,7 @@
 
 @preconcurrency import Foundation
 
+@available(iOS 14, *)
 class StderrCapture: @unchecked Sendable {
     
     private let stateLock = NSLock()

@@ -8,6 +8,7 @@
 
 import Foundation
 
+@available(iOS 14, *)
 extension InputStream {
     func toData() -> Data {
         open()

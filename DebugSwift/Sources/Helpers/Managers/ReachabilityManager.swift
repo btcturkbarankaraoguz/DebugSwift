@@ -8,6 +8,7 @@
 import CoreTelephony
 import Foundation
 
+@available(iOS 14, *)
 enum ReachabilityManager {
     private static let reachability = try? Reachability()
 

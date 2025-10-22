@@ -7,6 +7,7 @@
 
 import Foundation
 
+@available(iOS 14, *)
 extension Bundle {
     #if !SWIFT_PACKAGE
     static let module: Bundle = {

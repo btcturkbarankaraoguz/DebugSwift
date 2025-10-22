@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+@available(iOS 14, *)
 final class NetworkViewControllerDetail: BaseController {
     private var model: HttpModel
     private var infos: [Config]
@@ -85,6 +86,7 @@ final class NetworkViewControllerDetail: BaseController {
     }
 }
 
+@available(iOS 14, *)
 extension NetworkViewControllerDetail: UITableViewDelegate, UITableViewDataSource {
     private var _infos: [Config] {
         searchController.isActive ? filteredInfos : infos
@@ -165,6 +167,7 @@ extension NetworkViewControllerDetail: UITableViewDelegate, UITableViewDataSourc
     }
 }
 
+@available(iOS 14, *)
 extension NetworkViewControllerDetail: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text else { return }
@@ -180,13 +183,16 @@ extension NetworkViewControllerDetail: UISearchResultsUpdating {
 
 // MARK: - Config
 
+@available(iOS 14, *)
 extension NetworkViewControllerDetail {
+    @available(iOS 14, *)
     struct Config {
         let title: String
         let description: String
     }
 }
 
+@available(iOS 14, *)
 extension [NetworkViewControllerDetail.Config] {
     init(model: HttpModel) {
         var configs: [NetworkViewControllerDetail.Config] = [
@@ -244,6 +250,7 @@ extension [NetworkViewControllerDetail.Config] {
     }
 }
 
+@available(iOS 14, *)
 extension NetworkViewControllerDetail {
     @objc private func copyButtonTapped() {
         UIPasteboard.general.string = formatLog(model: model)
@@ -413,6 +420,7 @@ extension NetworkViewControllerDetail {
 
 // MARK: - Replay Response Viewer
 
+@available(iOS 14, *)
 final class ReplayResponseViewController: BaseController {
     private let data: Data
     private let response: URLResponse?

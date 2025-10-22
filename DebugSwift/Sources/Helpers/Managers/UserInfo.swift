@@ -7,7 +7,9 @@
 
 import UIKit
 
+@available(iOS 14, *)
 public enum UserInfo {
+    @available(iOS 14, *)
     public struct Info {
         public let title: String
         public let detail: String

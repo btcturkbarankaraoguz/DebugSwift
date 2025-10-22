@@ -7,7 +7,9 @@
 
 import Foundation
 
+@available(iOS 14, *)
 extension DebugSwift {
+    @available(iOS 14, *)
     @MainActor
     public class SwiftUIRender: @unchecked Sendable {
         public static let shared = SwiftUIRender()

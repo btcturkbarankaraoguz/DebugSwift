@@ -3,6 +3,7 @@
 import QuartzCore
 import UIKit
 
+@available(iOS 14, *)
 final class RangeSliderTrackLayer: CALayer, @unchecked Sendable {
     weak var rangeSlider: RangeSlider?
     
@@ -27,6 +28,7 @@ final class RangeSliderTrackLayer: CALayer, @unchecked Sendable {
     }
 }
 
+@available(iOS 14, *)
 final class RangeSliderThumbLayer: CALayer, @unchecked Sendable {
     var highlighted = false {
         didSet {
@@ -74,6 +76,7 @@ final class RangeSliderThumbLayer: CALayer, @unchecked Sendable {
     }
 }
 
+@available(iOS 14, *)
 final class RangeSlider: UIControl {
     var minimumValue = 0.0 {
         willSet(newValue) {

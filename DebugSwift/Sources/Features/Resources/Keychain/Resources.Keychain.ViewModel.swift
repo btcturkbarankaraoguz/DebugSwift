@@ -9,6 +9,7 @@
 import Foundation
 import Security
 
+@available(iOS 14, *)
 final class ResourcesKeychainViewModel: NSObject, ResourcesGenericListViewModel {
     private var keys = [String]()
     private var keychain = Keychain()

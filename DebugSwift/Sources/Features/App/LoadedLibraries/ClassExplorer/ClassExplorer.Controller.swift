@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 final class ClassExplorerViewController: BaseController {
     
     // MARK: - Properties
@@ -95,6 +96,7 @@ final class ClassExplorerViewController: BaseController {
 
 // MARK: - UITableViewDataSource
 
+@available(iOS 14, *)
 extension ClassExplorerViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -167,6 +169,7 @@ extension ClassExplorerViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
+@available(iOS 14, *)
 extension ClassExplorerViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

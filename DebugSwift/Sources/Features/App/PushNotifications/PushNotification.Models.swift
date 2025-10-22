@@ -11,6 +11,7 @@ import UserNotifications
 
 // MARK: - SimulatedNotification
 
+@available(iOS 14, *)
 public struct SimulatedNotification: Codable, Identifiable, Sendable {
     public let id: String
     public let title: String
@@ -114,6 +115,7 @@ public struct SimulatedNotification: Codable, Identifiable, Sendable {
 
 // MARK: - NotificationTemplate
 
+@available(iOS 14, *)
 public struct NotificationTemplate: Codable, Identifiable, Sendable {
     public let id: String
     public let name: String
@@ -166,6 +168,7 @@ public struct NotificationTemplate: Codable, Identifiable, Sendable {
 
 // MARK: - NotificationConfiguration
 
+@available(iOS 14, *)
 public struct NotificationConfiguration: Codable, Sendable {
     public var isEnabled: Bool
     public var showInForeground: Bool
@@ -214,6 +217,7 @@ public struct NotificationConfiguration: Codable, Sendable {
 
 // MARK: - Default Templates
 
+@available(iOS 14, *)
 extension NotificationTemplate {
     public static let defaultTemplates: [NotificationTemplate] = [
         NotificationTemplate(

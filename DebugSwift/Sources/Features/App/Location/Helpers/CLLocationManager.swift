@@ -8,6 +8,7 @@
 import CoreLocation
 import Foundation
 
+@available(iOS 14, *)
 class CLLocationManagerTracker: @unchecked Sendable {
     
     private init() {}
@@ -26,6 +27,7 @@ class CLLocationManagerTracker: @unchecked Sendable {
     }
 }
 
+@available(iOS 14, *)
 extension CLLocationManager {
     static func swizzleMethods() {
         SwizzleManager.swizzle(

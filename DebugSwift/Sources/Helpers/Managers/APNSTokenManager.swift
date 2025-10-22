@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 @preconcurrency import UserNotifications
 
+@available(iOS 14, *)
 @MainActor
 public class APNSTokenManager: NSObject, @unchecked Sendable {
     public static let shared = APNSTokenManager()
@@ -234,6 +235,7 @@ public class APNSTokenManager: NSObject, @unchecked Sendable {
 
 // MARK: - Convenience Extensions
 
+@available(iOS 14, *)
 extension APNSTokenManager {
     /// Get a formatted, readable token string with spaces for better readability
     public var formattedToken: String? {

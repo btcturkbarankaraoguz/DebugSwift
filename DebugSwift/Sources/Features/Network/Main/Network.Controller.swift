@@ -15,6 +15,7 @@ enum NetworkInspectorMode {
     case webview
 }
 
+@available(iOS 14, *)
 final class NetworkViewController: BaseController, MainFeatureType {
     var controllerType: DebugSwiftFeature { .network }
 
@@ -607,6 +608,7 @@ final class NetworkViewController: BaseController, MainFeatureType {
     }
 }
 
+@available(iOS 14, *)
 extension NetworkViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text else { return }
@@ -623,6 +625,7 @@ extension NetworkViewController: UISearchResultsUpdating {
     }
 }
 
+@available(iOS 14, *)
 extension NetworkViewController: UITableViewDelegate, UITableViewDataSource {
     private func setupTableView() {
         view.addSubview(tableView)

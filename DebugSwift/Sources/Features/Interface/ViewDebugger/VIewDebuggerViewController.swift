@@ -9,6 +9,7 @@
 import UIKit
 
 /// Root view controller for the view debugger.
+@available(iOS 14, *)
 final class ViewDebuggerViewController:
     UIViewController,
     DebugSnapshotViewControllerDelegate,

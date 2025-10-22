@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 extension UILabel {
     func setAttributedText(title: String, subtitle: String, scale: CGFloat) {
         let titleAttributes: [NSAttributedString.Key: Any] = [

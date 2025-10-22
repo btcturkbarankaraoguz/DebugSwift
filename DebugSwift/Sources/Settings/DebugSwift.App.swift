@@ -7,7 +7,9 @@
 
 import UIKit
 
+@available(iOS 14, *)
 extension DebugSwift {
+    @available(iOS 14, *)
     public class App: @unchecked Sendable {
         public static let shared = App()
         private init() {}

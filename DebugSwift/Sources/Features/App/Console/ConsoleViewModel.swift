@@ -7,6 +7,7 @@
 
 import Foundation
 
+@available(iOS 14, *)
 final class AppConsoleViewModel: NSObject, ResourcesGenericListViewModel {
     private var data: [String] { ConsoleOutput.shared.getPrintAndNSLogOutput() }
 

@@ -7,6 +7,7 @@
 
 import Foundation
 
+@available(iOS 14, *)
 extension DebugSwift {
     public enum WebSocket {
         /// Enable WebSocket monitoring manually

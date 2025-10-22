@@ -8,6 +8,7 @@
 import UIKit
 import SQLite3
 
+@available(iOS 14, *)
 @MainActor
 final class DatabaseBrowserViewController: BaseController {
     
@@ -41,6 +42,7 @@ final class DatabaseBrowserViewController: BaseController {
 
 // MARK: - Setup
 
+@available(iOS 14, *)
 private extension DatabaseBrowserViewController {
     func setup() {
         setupViews()
@@ -84,6 +86,7 @@ private extension DatabaseBrowserViewController {
 
 // MARK: - UITableViewDataSource
 
+@available(iOS 14, *)
 extension DatabaseBrowserViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -107,6 +110,7 @@ extension DatabaseBrowserViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
+@available(iOS 14, *)
 extension DatabaseBrowserViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -123,6 +127,7 @@ extension DatabaseBrowserViewController: UITableViewDelegate {
 
 // MARK: - UISearchResultsUpdating
 
+@available(iOS 14, *)
 extension DatabaseBrowserViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         viewModel.filterDatabases(with: searchController.searchBar.text)
@@ -132,6 +137,7 @@ extension DatabaseBrowserViewController: UISearchResultsUpdating {
 
 // MARK: - Database File Cell
 
+@available(iOS 14, *)
 final class DatabaseFileCell: UITableViewCell {
     private let iconImageView: UIImageView = {
         let imageView = UIImageView()

@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 final class WebSocketResendFrameViewController: BaseController {
     
     private let originalFrame: WebSocketFrame
@@ -306,6 +307,7 @@ final class WebSocketResendFrameViewController: BaseController {
 
 // MARK: - UITextViewDelegate
 
+@available(iOS 14, *)
 extension WebSocketResendFrameViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         updateCharacterCount()
@@ -314,6 +316,7 @@ extension WebSocketResendFrameViewController: UITextViewDelegate {
 
 // MARK: - Data Extension for Hex Parsing
 
+@available(iOS 14, *)
 private extension Data {
     init?(hexString: String) {
         let len = hexString.count / 2

@@ -11,6 +11,7 @@ import Foundation
 
 /// Provides identifying information for an element that is displayed in the
 /// view debugger.
+@available(iOS 14, *)
 final class ElementLabel: NSObject {
     /// Classification for an element that determines how it is represented
     /// in the view debugger.
@@ -42,6 +43,7 @@ final class ElementLabel: NSObject {
 }
 
 /// A UI element that can be snapshotted.
+@available(iOS 14, *)
 @MainActor
 protocol Element {
     /// Identifying information for the element, like its name and classification.

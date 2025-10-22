@@ -11,6 +11,7 @@ import Foundation
 // Full Realm support requires adding RealmSwift as a dependency
 // and implementing the actual Realm operations.
 
+@available(iOS 14, *)
 final class RealmManager: @unchecked Sendable {
     static let shared = RealmManager()
     

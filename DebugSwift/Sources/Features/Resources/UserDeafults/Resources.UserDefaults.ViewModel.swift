@@ -8,6 +8,7 @@
 
 import Foundation
 
+@available(iOS 14, *)
 final class ResourcesUserDefaultsViewModel: NSObject, ResourcesGenericListViewModel {
     private var keys = [String]()
 

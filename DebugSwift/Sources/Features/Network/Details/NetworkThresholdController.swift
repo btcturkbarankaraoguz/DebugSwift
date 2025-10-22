@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 final class NetworkThresholdController: BaseTableController {
     
     // MARK: - Cell Identifiers
@@ -172,6 +173,7 @@ final class NetworkThresholdController: BaseTableController {
 
 // MARK: - UITableViewDataSource
 
+@available(iOS 14, *)
 extension NetworkThresholdController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         Section.allCases.count
@@ -415,6 +417,7 @@ extension NetworkThresholdController {
 
 // MARK: - UITableViewDelegate
 
+@available(iOS 14, *)
 extension NetworkThresholdController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)

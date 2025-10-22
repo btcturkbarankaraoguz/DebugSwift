@@ -7,6 +7,7 @@
 
 import Foundation
 
+@available(iOS 14, *)
 @MainActor
 final class WebSocketDataSource: ObservableObject {
     static let shared = WebSocketDataSource()

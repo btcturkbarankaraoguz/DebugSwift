@@ -8,6 +8,7 @@
 
 import Foundation
 
+@available(iOS 14, *)
 extension URLCache {
     static let customHttp = URLCache(
         memoryCapacity: 32 * 1024 * 1024,

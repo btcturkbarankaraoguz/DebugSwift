@@ -72,6 +72,7 @@ enum WebSocketConnectionStatus: Equatable {
     }
 }
 
+@available(iOS 14, *)
 final class WebSocketFrame: NSObject {
     let id = UUID().uuidString
     let timestamp: Date
@@ -137,6 +138,7 @@ final class WebSocketFrame: NSObject {
     }
 }
 
+@available(iOS 14, *)
 final class WebSocketConnection: NSObject {
     let id = UUID().uuidString
     let url: URL

@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 @MainActor
 protocol MenuSegmentedControlTableViewCellDelegate: AnyObject {
     func menuSegmentedControlTableViewCell(
@@ -16,6 +17,7 @@ protocol MenuSegmentedControlTableViewCellDelegate: AnyObject {
     )
 }
 
+@available(iOS 14, *)
 final class MenuSegmentedControlTableViewCell: UITableViewCell {
     weak var delegate: MenuSegmentedControlTableViewCellDelegate?
 

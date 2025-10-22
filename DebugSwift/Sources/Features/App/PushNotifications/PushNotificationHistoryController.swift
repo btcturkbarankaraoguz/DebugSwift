@@ -9,6 +9,7 @@ import UIKit
 
 // MARK: - UIColor Extension for Hex Support
 
+@available(iOS 14, *)
 extension UIColor {
     convenience init?(hex: String) {
         let r, g, b: CGFloat
@@ -36,6 +37,7 @@ extension UIColor {
     }
 }
 
+@available(iOS 14, *)
 @MainActor
 class PushNotificationHistoryController: BaseController {
     
@@ -121,6 +123,7 @@ class PushNotificationHistoryController: BaseController {
 
 // MARK: - UITableViewDataSource
 
+@available(iOS 14, *)
 extension PushNotificationHistoryController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -184,6 +187,7 @@ extension PushNotificationHistoryController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
+@available(iOS 14, *)
 extension PushNotificationHistoryController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

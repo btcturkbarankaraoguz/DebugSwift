@@ -9,6 +9,7 @@
 import UIKit
 
 /// An element that represents a UIView.
+@available(iOS 14, *)
 @MainActor
 final class ViewElement: NSObject, Element {
     var label: ElementLabel {

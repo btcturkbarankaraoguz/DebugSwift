@@ -8,6 +8,7 @@
 
 import Foundation
 
+@available(iOS 14, *)
 final class ApplicationDirectories: @unchecked Sendable {
     static let shared = ApplicationDirectories()
 

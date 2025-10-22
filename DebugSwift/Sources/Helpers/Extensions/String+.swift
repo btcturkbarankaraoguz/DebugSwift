@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 extension String {
     static let cell = "cell"
 

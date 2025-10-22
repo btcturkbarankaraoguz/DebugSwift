@@ -19,6 +19,7 @@ enum GridOverlaySettingsRow: Int {
     case color
 }
 
+@available(iOS 14, *)
 final class InterfaceGridController: BaseTableController, MenuSwitchTableViewCellDelegate,
     SliderTableViewCellDelegate, ColorPickerTableViewCellDelegate {
     private let switchCellIdentifier = "MenuSwitchTableViewCell"

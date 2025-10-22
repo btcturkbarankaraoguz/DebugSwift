@@ -7,6 +7,7 @@
 
 import Foundation
 
+@available(iOS 14, *)
 class CrashManager: @unchecked Sendable {
     
     private init() {}

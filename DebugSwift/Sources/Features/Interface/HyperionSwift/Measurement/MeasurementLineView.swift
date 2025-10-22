@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+@available(iOS 14, *)
 @MainActor
 class MeasurementsView: UIView {
     private let styleManager = StyleManager()

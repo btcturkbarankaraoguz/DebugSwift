@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+@available(iOS 14, *)
 extension UINavigationController {
     func setBackgroundColor(color: UIColor = UIColor.black) {
         let appearance = UINavigationBarAppearance()
@@ -19,6 +20,7 @@ extension UINavigationController {
     }
 }
 
+@available(iOS 14, *)
 extension UITabBar {
     func setBackgroundColor(color: UIColor = UIColor.black) {
         let appearance = UITabBarAppearance()

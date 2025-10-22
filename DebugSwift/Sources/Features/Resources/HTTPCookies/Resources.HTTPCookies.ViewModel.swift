@@ -7,7 +7,9 @@
 
 import Foundation
 
+@available(iOS 14, *)
 final class ResourcesHTTPCookiesViewModel: NSObject, ResourcesGenericListViewModel {
+    @available(iOS 14, *)
     private struct Key: Equatable {
         var domain: String
         var name: String

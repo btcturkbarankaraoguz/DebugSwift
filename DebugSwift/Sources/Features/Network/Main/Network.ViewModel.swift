@@ -8,6 +8,7 @@
 
 import Foundation
 
+@available(iOS 14, *)
 final class NetworkViewModel {
     var reachEnd = true
     var firstIn = true

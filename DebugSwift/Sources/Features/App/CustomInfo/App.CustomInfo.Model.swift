@@ -7,6 +7,7 @@
 
 import Foundation
 
+@available(iOS 14, *)
 public struct CustomData {
     public init(title: String, infos: [Info]) {
         self.title = title
@@ -17,7 +18,9 @@ public struct CustomData {
     let infos: [Info]
 }
 
+@available(iOS 14, *)
 extension CustomData {
+    @available(iOS 14, *)
     public struct Info {
         public init(title: String, subtitle: String) {
             self.title = title

@@ -7,7 +7,9 @@
 
 import UIKit
 
+@available(iOS 14, *)
 extension DebugSwift {
+    @available(iOS 14, *)
     public class Network: @unchecked Sendable {
         public static let shared = Network()
         private init() {
@@ -110,6 +112,7 @@ extension DebugSwift {
     
     // MARK: - App Groups Configuration
     
+    @available(iOS 14, *)
     public class Resources: @unchecked Sendable {
         public static let shared = Resources()
         private init() {

@@ -9,6 +9,7 @@
 import Foundation
 
 /// Configuration options for the in app view debugger.
+@available(iOS 14, *)
 final class Configuration: NSObject {
     /// Configuration for the 3D snapshot view.
     @objc var snapshotViewConfiguration = SnapshotViewConfiguration()

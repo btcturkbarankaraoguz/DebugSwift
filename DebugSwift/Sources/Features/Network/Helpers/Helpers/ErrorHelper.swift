@@ -8,6 +8,7 @@
 
 import Foundation
 
+@available(iOS 14, *)
 enum ErrorHelper {
     static func handle(_ error: Error?, model: HttpModel) -> HttpModel {
         if error == nil {

@@ -8,6 +8,7 @@
 
 import Foundation
 
+@available(iOS 14, *)
 extension [String: Any] {
     func formattedString() -> String {
         var formattedString = ""
@@ -18,6 +19,7 @@ extension [String: Any] {
     }
 }
 
+@available(iOS 14, *)
 extension [AnyHashable: Any] {
     func convertKeysToString() -> [String: Value] {
         var result: [String: Value] = [:]
@@ -32,6 +34,7 @@ extension [AnyHashable: Any] {
     }
 }
 
+@available(iOS 14, *)
 extension Dictionary {
     func asJsonStr() -> String? {
         var jsonCompatibleDictionary: [String: Any] = [:]

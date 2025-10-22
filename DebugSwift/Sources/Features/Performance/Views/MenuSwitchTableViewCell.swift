@@ -8,11 +8,13 @@
 
 import UIKit
 
+@available(iOS 14, *)
 @MainActor
 protocol MenuSwitchTableViewCellDelegate: AnyObject {
     func menuSwitchTableViewCell(_ cell: MenuSwitchTableViewCell, didSetOn isOn: Bool)
 }
 
+@available(iOS 14, *)
 final class MenuSwitchTableViewCell: UITableViewCell {
     weak var delegate: MenuSwitchTableViewCellDelegate?
 
@@ -65,6 +67,7 @@ final class MenuSwitchTableViewCell: UITableViewCell {
     }
 }
 
+@available(iOS 14, *)
 extension MenuSwitchTableViewCell {
     static let identifier = "MenuSwitchTableViewCell"
 }

@@ -7,11 +7,13 @@
 
 import Foundation
 
+@available(iOS 14, *)
 public protocol UserDefaultsService: Sendable {
     func set<T: Encodable>(encodable: T, forKey key: String)
     func value<T: Decodable>(_ type: T.Type, forKey key: String) -> T?
 }
 
+@available(iOS 14, *)
 extension UserDefaults {
     enum Key: String {
         case debugger
@@ -19,6 +21,7 @@ extension UserDefaults {
     }
 }
 
+@available(iOS 14, *)
 @propertyWrapper struct UserDefaultAccess<T: Codable & Sendable>: Sendable {
     let key: String
     let defaultValue: T
@@ -42,6 +45,7 @@ extension UserDefaults {
 
 // MARK: - Extensions
 
+@available(iOS 14, *)
 extension UserDefaults: UserDefaultsService, @unchecked @retroactive Sendable {
     public func set(encodable: some Encodable, forKey key: String) {
         if let data = try? JSONEncoder().encode(encodable) {
@@ -59,6 +63,7 @@ extension UserDefaults: UserDefaultsService, @unchecked @retroactive Sendable {
 
 // MARK: - Extensions
 
+@available(iOS 14, *)
 extension Keychain: UserDefaultsService, @unchecked Sendable {
     public func set(encodable: some Encodable, forKey key: String) {
         if let data = try? JSONEncoder().encode(encodable) {

@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 enum DSFloatChat {
     static let animationDuration = 0.3
     static let animationCancelMoveDuration = 0.35

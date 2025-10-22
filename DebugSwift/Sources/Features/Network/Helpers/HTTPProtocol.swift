@@ -8,21 +8,26 @@
 
 import Foundation
 
+@available(iOS 14, *)
 final class CustomHTTPProtocol: URLProtocol, @unchecked Sendable {
     private static let requestProperty = "com.custom.http.protocol"
 
+    @available(iOS 14, *)
     final class func clearCache() {
         URLCache.customHttp.removeAllCachedResponses()
     }
 
+    @available(iOS 14, *)
     final class func start() {
         URLProtocol.registerClass(self)
     }
 
+    @available(iOS 14, *)
     final class func stop() {
         URLProtocol.unregisterClass(self)
     }
 
+    @available(iOS 14, *)
     private final class func canServeRequest(_ request: URLRequest) -> Bool {
         if let _ = property(forKey: requestProperty, in: request) { return false }
 
@@ -247,6 +252,7 @@ final class CustomHTTPProtocol: URLProtocol, @unchecked Sendable {
     }
 }
 
+@available(iOS 14, *)
 extension CustomHTTPProtocol: URLSessionDataDelegate {
     func urlSession(
         _: URLSession,
@@ -374,6 +380,7 @@ extension CustomHTTPProtocol: URLSessionDataDelegate {
     }
 }
 
+@available(iOS 14, *)
 extension CustomHTTPProtocol: URLSessionTaskDelegate {
     func urlSession(
         _ session: URLSession,

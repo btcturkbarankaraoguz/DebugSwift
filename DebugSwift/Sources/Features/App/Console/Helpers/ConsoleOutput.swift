@@ -7,6 +7,7 @@
 
 import Foundation
 
+@available(iOS 14, *)
 class ConsoleOutput: @unchecked Sendable {
     
     static let shared = ConsoleOutput()
@@ -73,6 +74,7 @@ class ConsoleOutput: @unchecked Sendable {
         
 }
 
+@available(iOS 14, *)
 extension [String] {
     fileprivate func clean() -> String {
         filter { !$0.contains("[DebugSwift] 🚀") }.reversed().joined(separator: "\n\n")

@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 final class WebSocketFrameViewController: BaseController {
     
     private let connection: WebSocketConnection
@@ -224,6 +225,7 @@ final class WebSocketFrameViewController: BaseController {
 
 // MARK: - UISearchResultsUpdating
 
+@available(iOS 14, *)
 extension WebSocketFrameViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         isSearching = !(searchController.searchBar.text?.isEmpty ?? true)
@@ -234,6 +236,7 @@ extension WebSocketFrameViewController: UISearchResultsUpdating {
 
 // MARK: - UITableView DataSource & Delegate
 
+@available(iOS 14, *)
 extension WebSocketFrameViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

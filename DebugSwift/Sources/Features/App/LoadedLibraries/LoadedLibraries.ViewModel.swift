@@ -9,6 +9,7 @@ import Foundation
 import MachO
 import ObjectiveC
 
+@available(iOS 14, *)
 final class LoadedLibrariesViewModel: @unchecked Sendable {
     
     // MARK: - Types
@@ -19,6 +20,7 @@ final class LoadedLibrariesViewModel: @unchecked Sendable {
         case `private`
     }
     
+    @available(iOS 14, *)
     struct LoadedLibrary {
         let name: String
         let path: String

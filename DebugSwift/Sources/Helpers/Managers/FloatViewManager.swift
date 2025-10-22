@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 @MainActor
 final class FloatViewManager: NSObject {
     static let shared = FloatViewManager()
@@ -97,6 +98,7 @@ final class FloatViewManager: NSObject {
     }
 }
 
+@available(iOS 14, *)
 extension FloatViewManager {
     private func setup() {
         ballRedCancelView.frame = .init(
@@ -119,6 +121,7 @@ extension FloatViewManager {
     }
 }
 
+@available(iOS 14, *)
 extension FloatViewManager: UINavigationControllerDelegate {
     func navigationController(
         _: UINavigationController,
@@ -138,6 +141,7 @@ extension FloatViewManager: UINavigationControllerDelegate {
     }
 }
 
+@available(iOS 14, *)
 extension FloatViewManager: FloatViewDelegate {
     func floatViewBeginMove(floatView _: FloatBallView, point _: CGPoint) {
         UIView.animate(

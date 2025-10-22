@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+@available(iOS 14, *)
 extension UIWindow {
     // MARK: - Constants
 
@@ -239,6 +240,7 @@ extension UIWindow {
 
 // MARK: - DispatchQueue extension for once
 
+@available(iOS 14, *)
 private final class OnceTracker: @unchecked Sendable {
     private let lock = NSLock()
     private var executedTokens: Set<String> = []
@@ -256,9 +258,11 @@ private final class OnceTracker: @unchecked Sendable {
     }
 }
 
+@available(iOS 14, *)
 extension DispatchQueue {
     private static let onceTracker = OnceTracker()
 
+    @available(iOS 14, *)
     class func once(token: String, block: () -> Void) {
         onceTracker.execute(token: token, block: block)
     }

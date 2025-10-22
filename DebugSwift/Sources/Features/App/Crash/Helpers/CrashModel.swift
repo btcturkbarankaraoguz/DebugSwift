@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 struct CrashModel: Codable, Equatable {
     let type: CrashType
     let details: Details
@@ -30,7 +31,9 @@ struct CrashModel: Codable, Equatable {
     }
 }
 
+@available(iOS 14, *)
 extension CrashModel {
+    @available(iOS 14, *)
     struct Details: Codable {
         let name: String
         let date: Date
@@ -69,7 +72,9 @@ extension CrashModel {
     }
 }
 
+@available(iOS 14, *)
 extension CrashModel {
+    @available(iOS 14, *)
     struct Context: Codable {
         let image: Data?
         let consoleOutput: String
@@ -101,7 +106,9 @@ extension CrashModel {
     }
 }
 
+@available(iOS 14, *)
 extension CrashModel {
+    @available(iOS 14, *)
     struct Trace: Codable {
         let title: String
         let detail: String
@@ -112,6 +119,7 @@ extension CrashModel {
     }
 }
 
+@available(iOS 14, *)
 extension [CrashModel.Trace] {
     static func builder(_ stack: [String]) -> [CrashModel.Trace] {
         var traces = [CrashModel.Trace]()

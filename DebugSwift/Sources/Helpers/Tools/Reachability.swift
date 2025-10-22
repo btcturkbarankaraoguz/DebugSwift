@@ -42,10 +42,12 @@ enum ReachabilityError: Error {
 @available(*, unavailable, renamed: "Notification.Name.reachabilityChanged")
 let ReachabilityChangedNotification = NSNotification.Name("ReachabilityChangedNotification")
 
+@available(iOS 14, *)
 extension Notification.Name {
     static let reachabilityChanged = Notification.Name("reachabilityChanged")
 }
 
+@available(iOS 14, *)
 class Reachability: @unchecked Sendable {
 
     typealias NetworkReachable = (Reachability) -> Void
@@ -180,6 +182,7 @@ class Reachability: @unchecked Sendable {
     }
 }
 
+@available(iOS 14, *)
 extension Reachability {
 
     // MARK: - *** Notifier methods ***
@@ -252,6 +255,7 @@ extension Reachability {
     var description: String { flags?.description ?? "unavailable flags" }
 }
 
+@available(iOS 14, *)
 extension Reachability {
 
     private func setReachabilityFlags() throws {
@@ -290,6 +294,7 @@ extension Reachability {
     }
 }
 
+@available(iOS 14, *)
 extension SCNetworkReachabilityFlags {
 
     typealias Connection = Reachability.Connection
@@ -395,6 +400,7 @@ extension SCNetworkReachabilityFlags {
  - don't alter the API of `Reachability.swift` in any way
  - still allow for automatic stopping of the notifier on `deinit`.
  */
+@available(iOS 14, *)
 private class ReachabilityWeakifier {
     weak var reachability: Reachability?
     init(reachability: Reachability) {
@@ -493,6 +499,7 @@ enum NetworkType: Int, CaseIterable {
 }
 
 #if os(iOS)
+@available(iOS 14, *)
 extension Reachability {
     func getSimpleNetworkType() -> NetworkType {
         try? startNotifier()

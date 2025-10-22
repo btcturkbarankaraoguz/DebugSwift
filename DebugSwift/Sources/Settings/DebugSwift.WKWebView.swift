@@ -8,9 +8,11 @@
 
 import Foundation
 
+@available(iOS 14, *)
 extension DebugSwift {
     
     /// Configuration and utilities for WKWebView network monitoring
+    @available(iOS 14, *)
     public final class WKWebView: @unchecked Sendable {
         
         /// Shared instance for WKWebView configuration

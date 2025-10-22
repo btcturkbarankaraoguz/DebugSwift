@@ -8,6 +8,7 @@
 import CoreLocation
 import Foundation
 
+@available(iOS 14, *)
 final class LocationViewModel: NSObject {
     var selectedIndex: Int = LocationToolkit.shared.indexSaved
 

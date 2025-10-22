@@ -8,6 +8,7 @@
 import Foundation
 import Network
 
+@available(iOS 14, *)
 final class WebSocketMonitor: NSObject, @unchecked Sendable {
     static let shared = WebSocketMonitor()
     
@@ -511,6 +512,7 @@ final class WebSocketMonitor: NSObject, @unchecked Sendable {
 
 // MARK: - Data Extensions
 
+@available(iOS 14, *)
 private extension Data {
     func string(encoding: String.Encoding) -> String? {
         return String(data: self, encoding: encoding)

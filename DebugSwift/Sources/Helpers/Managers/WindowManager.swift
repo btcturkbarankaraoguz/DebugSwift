@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+@available(iOS 14, *)
 @MainActor
 enum WindowManager {
     nonisolated(unsafe) static var isSelectingWindow = false
@@ -123,6 +124,7 @@ enum WindowManager {
     }
 }
 
+@available(iOS 14, *)
 final class CustomWindow: UIWindow {
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         if WindowManager.isSelectingWindow { return true }

@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 @MainActor
 protocol MeasurementViewDelegate: AnyObject {
     var attachedWindow: UIWindow? { get }

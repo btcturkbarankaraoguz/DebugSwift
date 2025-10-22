@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14, *)
 final class LeaksViewModel: NSObject, ResourcesGenericListViewModel {
     private var data: [PerformanceLeakDetector.LeakModel] {
         PerformanceLeakDetector.shared.leaks

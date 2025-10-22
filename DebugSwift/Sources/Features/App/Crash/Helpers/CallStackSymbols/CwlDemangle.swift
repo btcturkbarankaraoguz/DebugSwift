@@ -15,6 +15,7 @@ import Foundation
 ///   - isType: if true, no prefix is parsed and, on completion, the first item on the parse stack is returned.
 /// - Returns: the successfully parsed result
 /// - Throws: a SwiftSymbolParseError error that contains parse position when the error occurred.
+@available(iOS 14, *)
 func parseMangledSwiftSymbol(_ mangled: String, isType: Bool = false) throws -> SwiftSymbol {
     try parseMangledSwiftSymbol(mangled.unicodeScalars, isType: isType)
 }
@@ -26,6 +27,7 @@ func parseMangledSwiftSymbol(_ mangled: String, isType: Bool = false) throws -> 
 ///   - isType: if true, no prefix is parsed and, on completion, the first item on the parse stack is returned.
 /// - Returns: the successfully parsed result
 /// - Throws: a SwiftSymbolParseError error that contains parse position when the error occurred.
+@available(iOS 14, *)
 func parseMangledSwiftSymbol<C: Collection>(_ mangled: C, isType: Bool = false, symbolicReferenceResolver: ((Int32, Int) throws -> SwiftSymbol)? = nil) throws -> SwiftSymbol where C.Iterator.Element == UnicodeScalar {
     var demangler = Demangler(scalars: mangled)
     demangler.symbolicReferenceResolver = symbolicReferenceResolver
@@ -38,6 +40,7 @@ func parseMangledSwiftSymbol<C: Collection>(_ mangled: C, isType: Bool = false, 
     return try demangler.demangleSwift3TopLevelSymbol()
 }
 
+@available(iOS 14, *)
 extension SwiftSymbol: CustomStringConvertible {
     /// Overridden method to allow simple printing with default options
     var description: String {
@@ -60,6 +63,7 @@ extension SwiftSymbol: CustomStringConvertible {
 // MARK: Demangle.h
 
 /// These options mimic those used in the Swift project. Check that project for details.
+@available(iOS 14, *)
 struct SymbolPrintOptions: OptionSet {
     let rawValue: Int
 
@@ -217,6 +221,7 @@ enum ValueWitnessKind: UInt32, CustomStringConvertible {
     }
 }
 
+@available(iOS 14, *)
 struct SwiftSymbol {
     let kind: Kind
     var children: [SwiftSymbol]
@@ -296,6 +301,7 @@ struct SwiftSymbol {
 
 // MARK: DemangleNodes.def
 
+@available(iOS 14, *)
 extension SwiftSymbol {
     enum Kind {
         case allocator
@@ -509,6 +515,7 @@ private let lldbExpressionsModuleNamePrefix = "__lldb_expr_"
 private let maxRepeatCount = 2048
 private let maxNumWords = 26
 
+@available(iOS 14, *)
 private struct Demangler<C> where C: Collection, C.Iterator.Element == UnicodeScalar {
     var scanner: ScalarScanner<C>
     var nameStack: [SwiftSymbol] = []
@@ -525,6 +532,7 @@ private struct Demangler<C> where C: Collection, C.Iterator.Element == UnicodeSc
 
 // MARK: Demangler.cpp
 
+@available(iOS 14, *)
 private func getManglingPrefixLength<C: Collection>(_ scalars: C) -> Int where C.Iterator.Element == UnicodeScalar {
     var scanner = ScalarScanner(scalars: scalars)
     if scanner.conditional(string: "_T0") || scanner.conditional(string: "_$S") || scanner.conditional(string: "_$s") {
@@ -537,6 +545,7 @@ private func getManglingPrefixLength<C: Collection>(_ scalars: C) -> Int where C
     return 0
 }
 
+@available(iOS 14, *)
 extension SwiftSymbol.Kind {
     fileprivate var isDeclName: Bool {
         switch self {
@@ -592,6 +601,7 @@ extension SwiftSymbol.Kind {
     }
 }
 
+@available(iOS 14, *)
 extension Demangler {
     private func require<T>(_ optional: T?) throws -> T {
         if let v = optional {
@@ -2123,6 +2133,7 @@ extension Demangler {
 
 // MARK: Demangle.cpp (Swift 3)
 
+@available(iOS 14, *)
 extension Demangler {
     fileprivate mutating func demangleSwift3TopLevelSymbol() throws -> SwiftSymbol {
         reset()
@@ -3121,6 +3132,7 @@ private func decodeSwiftPunycode(_ value: String) -> String {
 
 // MARK: NodePrinter.cpp
 
+@available(iOS 14, *)
 extension TextOutputStream {
     fileprivate mutating func write<S: Sequence, T: Sequence>(sequence: S, labels: T, render: (inout Self, S.Iterator.Element) -> Void) where T.Iterator.Element == String? {
         var lg = labels.makeIterator()
@@ -3175,6 +3187,7 @@ extension TextOutputStream {
     }
 }
 
+@available(iOS 14, *)
 extension SwiftSymbol.Kind {
     fileprivate var isExistentialType: Bool {
         switch self {
@@ -3223,6 +3236,7 @@ extension SwiftSymbol.Kind {
     }
 }
 
+@available(iOS 14, *)
 extension SwiftSymbol {
     fileprivate var needSpaceBeforeType: Bool {
         switch kind {
@@ -3255,6 +3269,7 @@ private enum TypePrinting {
     case functionStyle
 }
 
+@available(iOS 14, *)
 private struct SymbolPrinter {
     var target: String
     var specializationPrefixPrinted: Bool
@@ -4180,6 +4195,7 @@ enum SwiftSymbolParseError: Error {
 }
 
 /// NOTE: This extension is fileprivate to avoid clashing with CwlUtils (from which it is taken). If you want to use these functions outside this file, consider including CwlUtils.
+@available(iOS 14, *)
 extension UnicodeScalar {
     /// Tests if the scalar is within a range
     private func isInRange(_ range: ClosedRange<UnicodeScalar>) -> Bool {
@@ -4212,6 +4228,7 @@ extension UnicodeScalar {
 /// A structure for traversing a `String.UnicodeScalarView`.
 ///
 /// **UNICODE WARNING**: this struct ignores all Unicode combining rules and parses each scalar individually. The rules for parsing must allow combined characters to be parsed separately or better yet, forbid combining characters at critical parse locations. If your data structure does not include these types of rule then you should be iterating over the `Character` elements in a `String` rather than using this struct.
+@available(iOS 14, *)
 private struct ScalarScanner<C: Collection> where C.Iterator.Element == UnicodeScalar {
     /// The underlying storage
     let scalars: C
@@ -4604,6 +4621,7 @@ private struct ScalarScanner<C: Collection> where C.Iterator.Element == UnicodeS
     }
 }
 
+@available(iOS 14, *)
 extension Array {
     fileprivate func at(_ index: Int) -> Element? {
         indices.contains(index) ? self[index] : nil
